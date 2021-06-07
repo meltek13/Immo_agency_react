@@ -37,6 +37,11 @@ const Navbar = () => {
   return(
     <div className="navbar">
       <div className="content-link">
+        <p className="link logo">
+        Immo
+        </p>
+        </div>
+      <div className="content-link">
         <Link className="link" to="/">Home</Link>
       </div>
       { loged ? ( 
