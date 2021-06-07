@@ -32,11 +32,17 @@ const Navbar = () => {
   return(
     <div className="navbar">
       <div className="content-link">
+        <p className="link logo">
+        Immo
+        </p>
+        </div>
+      <div className="content-link">
         <Link className="link" to="/">Home</Link>
       </div>
       { loged ? ( 
         <>
         <div className="content-link">
+
         <a href="" className="link" onClick={handleClick}>
           Se deconnecter
         </a>
@@ -45,7 +51,7 @@ const Navbar = () => {
         <Link className="link" to='/profil'>Profil</Link>
       </div>
       <div className="content-link">
-        <Link className="link" to="/createAnnoucement">Create Annoucement</Link>
+        <Link className="link" to="/createAnnoucement">Creer une annonce</Link>
       </div>
       </>
       ) : (
