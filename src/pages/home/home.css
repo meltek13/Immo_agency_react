@@ -1,3 +1,15 @@
+.intro{
+  height: 80px;
+  width: 100%;
+  background-color: black;
+}
+
+.intro-content{
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
 .annoucement{
   border: 1px solid black;
   width: 80%;
