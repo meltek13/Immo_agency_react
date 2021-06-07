@@ -24,10 +24,13 @@ const ShowAnnoucement = () => {
 
  return (
   <div className="annoucement">
-   <p>{annoucement.title}</p>
-   <p>{annoucement.description}</p>
-   <p>{annoucement.price}</p>
-   <p>{annoucement.size} m2</p>
+    <p>Titre: {annoucement.title}</p>
+    <p>Description: {annoucement.description}</p>
+    <p>Prix: {annoucement.price}€</p>
+    <p>Adress: {annoucement.adress}</p>
+    <p>Type: {annoucement.typeHome}</p>
+    <p>Ville: {annoucement.city}</p>
+    <p>Taille: {annoucement.size} m2</p>
   </div>
  )
 }
