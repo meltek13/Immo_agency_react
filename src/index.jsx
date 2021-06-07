@@ -6,32 +6,41 @@ import {
     Switch,
   } from 'react-router-dom';
 import './index.scss'
+import store from "./store-redux/store.js";
+import { Provider } from "react-redux";
 import Home from "pages/home"
 import Navbar from './components/Navbar'
 import CreateAnnoucement from './pages/CreateAnnoucement'
 import Profil from './pages/profil'
+import SignUp from 'pages/sign_up'
+import SignIn from 'pages/sign_in'
 import ShowAnnoucement from './pages/showAnnoucement'
 // import Footer from './components/Footer'
 
 const App = () => (
   <Router>
-    <Navbar/>
+  
+  <main>
+  <Provider store={store}>
+  <Navbar />
     <Switch>
-      <Route path="/createAnnoucement">
-        <CreateAnnoucement />
+      <Route path="/" exact>
+      <Home/>
       </Route>
-      <Route path="/showAnnoucement/:id">
-        <ShowAnnoucement/>
+      <Route path="/sign-up">
+      <SignUp/>
+      </Route>
+      <Route path="/sign-in">
+      <SignIn/>
       </Route>
       <Route path="/profil">
-        <Profil />
-      </Route>
-      <Route path="/">
-        <Home />
+      <Profil/>
       </Route>
     </Switch>
-  {/* <Footer/> */}
-  </Router>
+    </Provider>
+  </main>
+</Router>
+
 ); 
 
 
