@@ -18,13 +18,17 @@ const App = () => (
     <Route path="/createAnnoucement">
       <CreateAnnoucement />
     </Route>
+  <Route path="/profil">
+        <Profil />
+      </Route>
     <Route path="/">
       <Home />
     </Route>
   </Switch>
  {/* <Footer/> */}
 </Router>
+  
+  );
 
-);
 
 ReactDOM.render(<App />, document.getElementById("root"));
