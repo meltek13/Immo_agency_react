@@ -1,16 +1,32 @@
-import React from 'react'
+import React, {useState ,useEffect } from 'react'
+import Cookies from "js-cookie";
+
 import './index.scss'
 const Profil = () => {
+
+  const [user, setUser] = useState('')
+
+  const fetchFunction = () => {
+    fetch("http://localhost:3000/members", {
+      method: "get"
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        response.users.map(elem => elem.id === parseInt(Cookies.get("current_user_id")) && setUser(elem))
+      });
+  };
+
+  useEffect(() => {
+      fetchFunction();
+  }, []);
 
   return(
     <>
       <div id="container-profil">
         <h1>Profil User</h1>
         <div id="box-infos">
-          <p className='firstname'>Boris</p>
-          <p className='lastname'>La frappe</p>
-          <p className='email'>sddsds@yahoo.fr</p>
-          <p className='count-immo'>5</p>
+         <p>{user.email}</p>
+         <p>{user.id}</p>
         </div>
         <div className="pictures-immo">
           <h2>Nombre de biens:</h2>
