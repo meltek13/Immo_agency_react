@@ -1,12 +1,40 @@
-import React from 'react'
+import { React, useState, useEffect} from 'react';
 import './index.scss'
-const Profil = () => {
+import Cookies from "js-cookie";
 
+const Profil = () => {
+  const [email, setEmail] = useState("exemple")
+  const [id, setId] = useState("")
+ 
+
+  const fetchFunction = (e) => {
+ 
+    fetch("http://localhost:3000/members", {
+      method: "get",
+      headers: {
+        Authorization: Cookies.get("token"),
+        "Content-Type": "application/json",
+      }, 
+    })
+      .then((response) => response.json())
+      .then((response) => {
+       console.log(response)
+      
+      });
+  
+};
+      
+    useEffect(() => {
+        fetchFunction();
+      }, []);
+ 
   return(
     <>
       <div id="container-profil">
         <h1>Profil User</h1>
         <div id="box-infos">
+       
+        
           <p className='firstname'>Boris</p>
           <p className='lastname'>La frappe</p>
           <p className='email'>sddsds@yahoo.fr</p>
