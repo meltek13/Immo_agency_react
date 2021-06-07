@@ -43,14 +43,14 @@ const Navbar = () => {
         <>
         <div className="content-link">
         <a className="link" onClick={handleClick}>
-          Se deconnecter
+        Deconnexion
         </a>
       </div>
       <div className="content-link">
         <Link className="link" to="/profil">Profil</Link>
       </div>
       <div className="content-link">
-        <Link className="link" to="/createAnnoucement">Create Annoucement</Link>
+        <Link className="link" to="/createAnnoucement">Creer une annonce</Link>
       </div>
       </>
       ) : (

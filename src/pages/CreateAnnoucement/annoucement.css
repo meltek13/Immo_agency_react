@@ -1,3 +1,8 @@
 .form{
   display: block;
+  margin-top: 10px;
+}
+
+.content-input{
+ padding: 20px;
 }
