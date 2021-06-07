@@ -39,17 +39,32 @@ const Navbar = () => {
       <div className="content-link">
         <Link className="link" to="/">Home</Link>
       </div>
+      { loged ? ( 
+        <>
+        <div className="content-link">
+        <a className="link" onClick={handleClick}>
+          Se deconnecter
+        </a>
+      </div>
+      <div className="content-link">
+        <Link className="link" to="/profil">Profil</Link>
+      </div>
+      <div className="content-link">
+        <Link className="link" to="/createAnnoucement">Create Annoucement</Link>
+      </div>
+      </>
+      ) : (
+        <>
       <div className="content-link">
         <Link className="link" to="/sign-in">Se connecter</Link>
       </div>
       <div className="content-link">
         <Link className="link" to="/sign-up">S'incrire</Link>
       </div>
-      <div className="content-link">
-       <a className="link" onClick={handleClick}>
-                  Se deconnecter
-       </a>
-      </div>
+      </>
+      )}
+      
+      
     </div>
   )
 }
