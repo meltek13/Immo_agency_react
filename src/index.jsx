@@ -11,16 +11,19 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
 const App = () => (
-<Router>
-  <Navbar/>
-  <Switch>
-    <Route path="/">
-      <Home />
-    </Route>
-  </Switch>
- <Footer/>
-</Router>
-
-);
+  <Router>
+    <Navbar/>
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/profil">
+        <Profil />
+      </Route>
+    </Switch>
+   <Footer/>
+  </Router>
+  
+  );
 
 ReactDOM.render(<App />, document.getElementById("root"));
