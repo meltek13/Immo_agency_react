@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './annoucement.css'
+import Cookies from "js-cookie";
 
 const CreateAnnoucement = () => {
 
@@ -19,8 +20,7 @@ const CreateAnnoucement = () => {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
-      // replace 2 to cookies(user.id)
-      body: JSON.stringify({user_id: 2 ,title: title, description: description, adress: adress, zip_code: zipCode, city: city, price: price, size: size, typeHome: type})
+      body: JSON.stringify({user_id: Cookies.get("current_user_id") ,title: title, description: description, adress: adress, zip_code: zipCode, city: city, price: price, size: size, typeHome: type})
     })
     .then((response) => response.json())
     .then((response) => console.log(response))
