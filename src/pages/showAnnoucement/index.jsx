@@ -3,7 +3,7 @@ import useState from 'react-hook-use-state';
 import {
  useParams
 } from "react-router-dom";
-import Cookies from "js-cookie";
+import { useSelector } from "react-redux"
 
 const ShowAnnoucement = () => {
 
@@ -34,9 +34,10 @@ const ShowAnnoucement = () => {
     findUser();
   }, [annoucement.user_id])
 
+  const loged = useSelector((state) => state.loged);
  return (
   <div className="annoucement">
-    <p>De {user.email}</p>
+    { loged && <p>De {user.email}</p> }
     <p>{annoucement.title}</p>
     <p>{annoucement.description}</p>
     <p>{annoucement.price}</p>
