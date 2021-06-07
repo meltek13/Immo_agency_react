@@ -12,13 +12,14 @@ const Profil = () => {
     })
       .then((response) => response.json())
       .then((response) => {
-        response.users.map(elem => elem.id === parseInt(Cookies.get("current_user_id")) && setUser(elem))
+        response.users.map(elem => elem.id === parseInt(Cookies.get("current_user_id"))&& setUser(elem))
       });
   };
 
   useEffect(() => {
       fetchFunction();
   }, []);
+
 
   return(
     <>

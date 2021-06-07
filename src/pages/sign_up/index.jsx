@@ -50,8 +50,14 @@ const SignUp = () => {
     
     <div className="Register">
         <form>
-        <input type="Email" name="Email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="Password" name="Password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <div className="email-input">
+          <h3>Email</h3>
+          <input type="Email" name="Email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        </div>
+        <div className="password-input">
+          <h3>Password</h3>
+         <input type="Password" name="Password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        </div>
         <button type="submit" onClick={fetchFunction} >S'inscrire</button>
       </form>
     </div>
