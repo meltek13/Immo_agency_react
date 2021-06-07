@@ -11,16 +11,16 @@ const Profil = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-
-
-
   const fetchFunction = () => {
     fetch("http://localhost:3000/members", {
-      method: "get"
+      method: "get",
+      headers: {
+        Authorization: Cookies.get("token"),
+        "Content-Type": "application/json",
+      }, 
     })
       .then((response) => response.json())
       .then((response) => {
-
        console.log(response)
       setEmail(response.current_user.email)
       setId(response.current_user.id)
@@ -62,10 +62,6 @@ const Profil = () => {
       <div id="container-profil">
         <h1>Profil User</h1>
         <div id="box-infos">
-
-       
-        
-         
           <p className='id'>#ID {id}</p>
           <p className='email'>{email}</p>
 
