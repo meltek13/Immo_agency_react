@@ -27,6 +27,12 @@ const App = () => (
       <Route path="/" exact>
       <Home/>
       </Route>
+      <Route path="/createannoucement">
+        <CreateAnnoucement/>
+      </Route>
+      <Route path="/showAnnoucement/:id">
+        <ShowAnnoucement/>
+      </Route>
       <Route path="/sign-up">
       <SignUp/>
       </Route>
