@@ -1,10 +1,9 @@
 import React, {useState ,useEffect } from "react"
 import { Link } from 'react-router-dom';
 import './home.css'
-import { useSelector } from "react-redux";
 const Home = () => {
 
-    const loged = useSelector((state) => state.loged);
+    
     const [annoucements, setAnnoucements] = useState([])
    
     useEffect(() => {
@@ -16,7 +15,6 @@ const Home = () => {
 
     return (
         <>
-         { loged ? ( <p>connected</p> ) : (<p>not connected</p>)}
             <div className="intro">
                 <p className="intro-content">Immobilier.com est un site sur le quel vous pouvez trouver votre appartement ou maison au meuilleur prix</p>
             </div>
