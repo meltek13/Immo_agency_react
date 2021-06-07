@@ -8,9 +8,10 @@ import {
 import './index.scss'
 import Home from "pages/home"
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 
 const App = () => (
+
   <Router>
     <Navbar/>
     <Switch>
@@ -25,5 +26,6 @@ const App = () => (
   </Router>
   
   );
+
 
 ReactDOM.render(<App />, document.getElementById("root"));
