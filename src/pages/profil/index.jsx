@@ -65,10 +65,9 @@ const Profil = () => {
 
        
         
-          <p className='firstname'>Boris</p>
-          <p className='lastname'>#ID {id}</p>
+         
+          <p className='id'>#ID {id}</p>
           <p className='email'>{email}</p>
-          <p className='count-immo'>5</p>
 
         </div>
         <div className="pictures-immo">

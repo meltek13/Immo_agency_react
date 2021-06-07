@@ -6,6 +6,8 @@ import "./navbar.scss"
 import Cookies from "js-cookie";
 import { useSelector, useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
+import { HomeOutlined, PoweroffOutlined, UserOutlined, PlusSquareOutlined, SolutionOutlined   } from '@ant-design/icons'
+
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -32,35 +34,35 @@ const Navbar = () => {
   return(
     <div className="navbar">
       <div className="content-link">
-        <p className="link logo">
-        Immo
-        </p>
-        </div>
-      <div className="content-link">
-        <Link className="link" to="/">Home</Link>
+
+        <Link className="link " to="/"><span className="home-icon"><HomeOutlined /></span> 
+</Link>
+
       </div>
       { loged ? ( 
         <>
         <div className="content-link">
 
         <a href="" className="link" onClick={handleClick}>
-          Se deconnecter
+        <span className="disconnect-icon"><PoweroffOutlined /></span> 
         </a>
       </div>
       <div className="content-link">
-        <Link className="link" to='/profil'>Profil</Link>
+        <Link className="link" to='/profil'><span className="home-icon"><UserOutlined /></span> </Link>
       </div>
       <div className="content-link">
-        <Link className="link" to="/createAnnoucement">Creer une annonce</Link>
+
+        <Link className="link" to="/createAnnoucement"><span className="home-icon"><PlusSquareOutlined /></span></Link>
+
       </div>
       </>
       ) : (
         <>
       <div className="content-link">
-        <Link className="link" to="/sign-in">Se connecter</Link>
+        <Link className="link" to="/sign-in"><span className="connect-icon"><PoweroffOutlined /></span> </Link>
       </div>
       <div className="content-link">
-        <Link className="link" to="/sign-up">S'incrire</Link>
+        <Link className="link" to="/sign-up"><span className="home-icon"><SolutionOutlined /></span></Link>
       </div>
       </>
       )}

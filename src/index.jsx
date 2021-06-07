@@ -20,7 +20,7 @@ import ShowAnnoucement from './pages/showAnnoucement'
 const App = () => (
   <Router>
   
-  <main>
+  <main className="main">
   <Provider store={store}>
   <Navbar />
     <Switch>

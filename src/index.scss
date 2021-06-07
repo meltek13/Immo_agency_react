@@ -4,14 +4,6 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.navbar{
-  display: block;
-  position: fixed;
-  height: 100%;
-  width: 80px;
-  right: 0%;
-  background-color: black;
-}
 
 .footer{
   display: block;
@@ -22,15 +14,10 @@
   background-color: black;
 }
 
-.content-link{
-  padding: 20%;
-}
-
-.link{
-  text-decoration: none;
-  color: white;
-}
-
 .link:hover{
   text-decoration: underline;
+}
+
+.main{
+  margin-left: 200px
 }
