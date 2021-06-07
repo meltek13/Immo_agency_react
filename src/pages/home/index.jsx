@@ -16,9 +16,6 @@ const Home = () => {
     return (
         <>
 
-         { loged ? ( <p>connected</p> ) : (<p>not connected</p>)}
-            
-
 
             {annoucements.map(annoucement => 
                 <div key={annoucement.id} className="annoucement">
