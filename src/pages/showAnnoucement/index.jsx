@@ -12,30 +12,31 @@ const ShowAnnoucement = () => {
 
   let { id } = useParams();
   
-  // console.log(Cookies.get("current_user_id"))
-  
-  const findUser = () => {
-    fetch("http://localhost:3000/member-data")
-    .then((response) => response.json())
-    .then((response) => setUser(response))
-  }
-
   const findAnnoucment = () => {
     fetch("http://localhost:3000/annoucements/" + id)
     .then((response) => response.json())
-    .then((response) => setAnnoucement(response))
+    .then((response) => {
+      setAnnoucement(response)
+    })
+  }
+  const findUser = () => {
+    fetch("http://localhost:3000/members", {
+     method: "get"
+   })
+     .then((response) => response.json())
+     .then((response) => {
+       response.users.map(elem => elem.id ===  annoucement.user_id && setUser(elem))
+     });
   }
 
   useEffect(() => {
     findAnnoucment();
-    findUser()
-  }, [])
+    findUser();
+  }, [annoucement.user_id])
 
-
-  // console.log(annoucement)
  return (
   <div className="annoucement">
-    {/* <p>{user.email}</p> */}
+    <p>De {user.email}</p>
     <p>{annoucement.title}</p>
     <p>{annoucement.description}</p>
     <p>{annoucement.price}</p>
