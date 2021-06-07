@@ -6,7 +6,6 @@ import { useHistory } from "react-router-dom";
 
 import './index.scss'
 const Profil = () => {
-
   const [email, setEmail] = useState("")
   const [id, setId] = useState("")
   const dispatch = useDispatch();
