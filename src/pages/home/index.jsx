@@ -1,10 +1,9 @@
 import React, {useState ,useEffect } from "react"
 import { Link } from 'react-router-dom';
 import './home.css'
-import { useSelector } from "react-redux";
 const Home = () => {
 
-    const loged = useSelector((state) => state.loged);
+    
     const [annoucements, setAnnoucements] = useState([])
    
     useEffect(() => {
@@ -16,8 +15,11 @@ const Home = () => {
 
     return (
         <>
+
          { loged ? ( <p>connected</p> ) : (<p>not connected</p>)}
             
+
+
             {annoucements.map(annoucement => 
                 <div key={annoucement.id} className="annoucement">
                     <Link to={`/showAnnoucement/${annoucement.id}`}>{annoucement.title}</Link>

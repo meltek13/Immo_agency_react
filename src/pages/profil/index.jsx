@@ -1,28 +1,26 @@
-import { React, useState, useEffect} from 'react';
-import './index.scss'
+import React, {useState ,useEffect } from 'react'
 import Cookies from "js-cookie";
 import { useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
 import { useHistory } from "react-router-dom";
 
+import './index.scss'
 const Profil = () => {
   const [email, setEmail] = useState("")
   const [id, setId] = useState("")
   const dispatch = useDispatch();
   const history = useHistory();
- 
 
-  const fetchFunction = (e) => {
- 
+
+
+
+  const fetchFunction = () => {
     fetch("http://localhost:3000/members", {
-      method: "get",
-      headers: {
-        Authorization: Cookies.get("token"),
-        "Content-Type": "application/json",
-      }, 
+      method: "get"
     })
       .then((response) => response.json())
       .then((response) => {
+
        console.log(response)
       setEmail(response.current_user.email)
       setId(response.current_user.id)
@@ -55,17 +53,22 @@ const Profil = () => {
       
     };
 
+
+
+
+
   return(
     <>
       <div id="container-profil">
         <h1>Profil User</h1>
         <div id="box-infos">
+
        
         
          
           <p className='id'>#ID {id}</p>
           <p className='email'>{email}</p>
-          
+
         </div>
         <div className="pictures-immo">
           <h2>Nombre de biens:</h2>

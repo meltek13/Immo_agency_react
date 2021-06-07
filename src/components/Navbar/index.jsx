@@ -34,12 +34,15 @@ const Navbar = () => {
   return(
     <div className="navbar">
       <div className="content-link">
+
         <Link className="link " to="/"><span className="home-icon"><HomeOutlined /></span> 
 </Link>
+
       </div>
       { loged ? ( 
         <>
         <div className="content-link">
+
         <a href="" className="link" onClick={handleClick}>
         <span className="disconnect-icon"><PoweroffOutlined /></span> 
         </a>
@@ -48,7 +51,9 @@ const Navbar = () => {
         <Link className="link" to='/profil'><span className="home-icon"><UserOutlined /></span> </Link>
       </div>
       <div className="content-link">
+
         <Link className="link" to="/createAnnoucement"><span className="home-icon"><PlusSquareOutlined /></span></Link>
+
       </div>
       </>
       ) : (

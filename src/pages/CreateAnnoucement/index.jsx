@@ -26,17 +26,20 @@ const CreateAnnoucement = () => {
     .then((response) => console.log(response))
   }
 
+
   return (
-    <div className="form">
-      <input onChange={event => setTitle(event.target.value)} placeholder="Titre"/>
-      <input onChange={event => setDescription(event.target.value)} placeholder="Description"/>
-      <input onChange={event => setAdress(event.target.value)} placeholder="Adress"/>
-      <input onChange={event => setZipCode(event.target.value)} placeholder="Code postal"/>
-      <input onChange={event => setCity(event.target.value)} placeholder="Ville"/>
-      <input onChange={event => setPrice(event.target.value)} placeholder="Prix"/>
-      <input onChange={event => setSize(event.target.value)} placeholder="Taille"/>
-      <input onChange={event => setType(event.target.value)} placeholder="apparttement ou maison"/>
-      <button onClick={create}>Creer une annonce</button>
+    <div className="content-input">
+      <form>
+        <input className="form" onChange={event => setTitle(event.target.value)} placeholder="Titre"/>
+        <input className="form" onChange={event => setDescription(event.target.value)} placeholder="Description"/>
+        <input className="form" onChange={event => setAdress(event.target.value)} placeholder="Adress"/>
+        <input className="form" onChange={event => setZipCode(event.target.value)} placeholder="Code postal"/>
+        <input className="form" onChange={event => setCity(event.target.value)} placeholder="Ville"/>
+        <input className="form" onChange={event => setPrice(event.target.value)} placeholder="Prix"/>
+        <input className="form" onChange={event => setSize(event.target.value)} placeholder="Taille"/>
+        <input className="form" onChange={event => setType(event.target.value)} placeholder="appartement ou maison"/>
+        <button className="form" onClick={create}>Creer une annonce</button>
+      </form>
     </div>
   )
 }
