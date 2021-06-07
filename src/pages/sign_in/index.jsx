@@ -38,11 +38,14 @@ const SignIn = () => {
         return response.json()}
         )
         .then((userdata) => {
-          console.log(userdata)
-          Cookies.set("current_user_id", userdata.user.id)
-          dispatch(logIn());
-          history.push("/");
-         
+          if (Cookies.get("token") === "null"){
+              console.log("nul nul nul")
+          }else {
+            console.log(userdata)
+            Cookies.set("current_user_id", userdata.user.id)
+            dispatch(logIn());
+            history.push("/");
+          }
         });
     
   };

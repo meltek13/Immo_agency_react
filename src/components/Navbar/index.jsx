@@ -4,15 +4,12 @@ import {
 } from 'react-router-dom';
 import "./navbar.scss"
 import Cookies from "js-cookie";
-import { useSelector } from "react-redux";
-import {useDispatch } from "react-redux";
+import { useSelector, useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const loged = useSelector((state) => state.loged);
-
- 
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -28,9 +25,7 @@ const Navbar = () => {
         .then((userdata) => {
           console.log(userdata)
           Cookies.remove("token");
-          Cookies.remove("current_user_id");
           dispatch(logOut());
-          
         });
   };
 
@@ -47,12 +42,13 @@ const Navbar = () => {
       { loged ? ( 
         <>
         <div className="content-link">
-        <a className="link" onClick={handleClick}>
-        Deconnexion
+
+        <a href="" className="link" onClick={handleClick}>
+          Se deconnecter
         </a>
       </div>
       <div className="content-link">
-        <Link className="link" to="/profil">Profil</Link>
+        <Link className="link" to='/profil'>Profil</Link>
       </div>
       <div className="content-link">
         <Link className="link" to="/createAnnoucement">Creer une annonce</Link>
