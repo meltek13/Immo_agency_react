@@ -1,4 +1,5 @@
 import React, {useState ,useEffect } from "react"
+import { Link } from 'react-router-dom';
 import './home.css'
 
 const Home = () => {
@@ -11,7 +12,6 @@ const Home = () => {
             .then((response) =>  setAnnoucements(response))
     }, [])
 
-    console.log(annoucements)
 
     return (
         <>
@@ -20,7 +20,7 @@ const Home = () => {
             </div>
             {annoucements.map(annoucement => 
                 <div key={annoucement.id} className="annoucement">
-                    <p>{annoucement.title}</p>
+                    <Link to={`/showAnnoucement/${annoucement.id}`}>{annoucement.title}</Link>
                     <p>{annoucement.description}</p>
                     <p>{annoucement.price}</p>
                     <p>{annoucement.size} m2</p>
