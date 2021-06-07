@@ -8,7 +8,7 @@ import {
 import './index.scss'
 import Home from "pages/home"
 import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 
 const App = () => (
 <Router>
@@ -18,7 +18,7 @@ const App = () => (
       <Home />
     </Route>
   </Switch>
- <Footer/>
+ {/* <Footer/> */}
 </Router>
 
 );
