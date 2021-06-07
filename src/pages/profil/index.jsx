@@ -62,10 +62,10 @@ const Profil = () => {
         <div id="box-infos">
        
         
-          <p className='firstname'>Boris</p>
-          <p className='lastname'>#ID {id}</p>
+         
+          <p className='id'>#ID {id}</p>
           <p className='email'>{email}</p>
-          <p className='count-immo'>5</p>
+          
         </div>
         <div className="pictures-immo">
           <h2>Nombre de biens:</h2>
