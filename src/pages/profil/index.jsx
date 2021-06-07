@@ -6,7 +6,7 @@ import { logOut } from "store-redux/index";
 import { useHistory } from "react-router-dom";
 
 const Profil = () => {
-  const [email, setEmail] = useState("exemple")
+  const [email, setEmail] = useState("")
   const [id, setId] = useState("")
   const dispatch = useDispatch();
   const history = useHistory();
