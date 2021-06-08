@@ -30,28 +30,31 @@
 
 .SearchBar{
   outline: none;
-  border-radius: 10px;
+  border-radius: 10px 0px 0px 10px;
   border: 1px solid lightgray;
   padding-left: 30px;
   padding-right: 8px;
   margin: 15px 0px;
-  height: 35px;
-  width: 40%;
+  height: 40px;
+  width: 60%;
+  border-right:none;
 }
 
 .buttonSearch{
-  margin-left: 15px;
+  
   color: white;
+  width: 20%;
   height: 40px;
   cursor: pointer;
   background-color: #68C0FE;
   outline: none;
-  border-radius: 10px 10px 0px 0px;
+  border-radius: 0px 10px 10px 0px;
   border: 1px solid lightgray;
+  border-left:none;
   font-weight: 500;
   font-size: 15px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 .buttonSearch2{
@@ -82,7 +85,7 @@
 .FormFilter{
   border: 1px solid lightgray;
   padding-left: 25px;
-  width: 79%;
+  width: 80%;
 }
 
 
