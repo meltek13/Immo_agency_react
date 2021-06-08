@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useParams } from 'react-router'
 import Cookies from "js-cookie";
+import ButtonUpdate from '../../components/ButtonUpdate'
+import Dropdown from 'react-dropdown';
 
 const UpdateAnnoucment = () => {
 
@@ -12,7 +14,7 @@ const UpdateAnnoucment = () => {
   const [city, setCity] = useState('')
   const [price, setPrice] = useState('')
   const [size, setSize] = useState('')
-  const [type, setType] = useState('')
+  const [type, setType] = useState('Maison')
 
   const update = () => {
     fetch("http://localhost:3000/annoucements/" + id, {
@@ -25,6 +27,15 @@ const UpdateAnnoucment = () => {
     })
   }
 
+  const options = [
+    'Maison', 'Appartement'
+  ];
+
+  const defaultOption = options[0];
+  
+  const onSelect = (typeHome) => {
+    setType(typeHome)
+  }
 
   return (
     <div className="content-input">
@@ -36,8 +47,8 @@ const UpdateAnnoucment = () => {
         <input className="form" onChange={event => setCity(event.target.value)} placeholder="Ville"/>
         <input className="form" onChange={event => setPrice(event.target.value)} placeholder="Prix"/>
         <input className="form" onChange={event => setSize(event.target.value)} placeholder="Taille"/>
-        <input className="form" onChange={event => setType(event.target.value)} placeholder="appartement ou maison"/>
-        <button className="form" onClick={update}>Modifier mon annonce</button>
+        <Dropdown className="dropdown-type-create" options={options} onChange={e => onSelect(e.value)} value={defaultOption} placeholder="Choisi une option" />
+        <ButtonUpdate action={update} name="Modifier mon annonce"/>
       </form>
     </div>
   )
