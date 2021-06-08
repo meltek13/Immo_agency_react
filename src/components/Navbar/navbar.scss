@@ -2,7 +2,7 @@
     display: block;
     position: fixed;
     height: 100%;
-    width: 100px;
+    width: 150px;
     left: 0%;
     background-color: black;
     padding-top: 25px
@@ -17,6 +17,12 @@
     color: white;
     font-size: 20px;
     font-weight: 600;
+    transition: all 100ms ease-in-out;
+  }
+  .link:hover{
+    font-size: 22.5px;
+    text-decoration: none;
+    color: orange;
   }
 
   .home-icon{
@@ -31,5 +37,11 @@
   .disconnect-icon{
     font-size: 40px;
     color: red;
+  }
+  h6{
+    position: relative;
+    width: 100px;
+    text-align: center;
+    right: 30px;
   }
 
