@@ -11,8 +11,8 @@
 }
 
 .annoucement{
-  border: 1px solid black;
   width: 80%;
+  height: 100px;
   margin-bottom: 20px;
   padding: 5px;
 }
@@ -27,4 +27,48 @@
 
 .search-city{
   padding: 20px;
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  display: grid;
+  place-items: center;
+ }
+ 
+.container {
+ background-color: #fff;
+ position: relative;
+ display: grid;
+ grid-template-columns: 300px 600px;
+ border-radius: 5px;
+ box-shadow: 0 15px 20px rgba(0, 0, 0, 0.156);
+ }
+ 
+ .btn {
+  position: absolute;
+  bottom: 5px;
+  right:10px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+  transition: all 250ms ease-in-out;
+}
+
+.btn:hover{
+  right: 5px;
 }
