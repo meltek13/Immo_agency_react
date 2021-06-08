@@ -12,7 +12,7 @@
 
 .annoucement{
   width: 80%;
-  height: 100px;
+  height: 110px;
   margin-bottom: 20px;
   padding: 5px;
 }
@@ -35,19 +35,13 @@
  box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  display: grid;
-  place-items: center;
- }
  
 .container {
  background-color: #fff;
  position: relative;
- display: grid;
- grid-template-columns: 300px 600px;
  border-radius: 5px;
  box-shadow: 0 15px 20px rgba(0, 0, 0, 0.156);
+ padding: 10px;
  }
  
  .btn {

@@ -59,13 +59,15 @@ const Home = () => {
   <Dropdown className="dropdown-type" options={options} onChange={e => onSelect(e.value)} value={defaultOption} placeholder="Choisi une option" />
 
             {annoucements.map(annoucement => 
-                <div key={annoucement.id} className="annoucement container">
-                    <h3>{annoucement.title}</h3>
-                    <p>{annoucement.description}</p>
-                    <p>{annoucement.city}</p>
-                    <p>{annoucement.price}</p>
-                    <p>{annoucement.size} m2</p>
-                    <Link to={`/showAnnoucement/${annoucement.id}`}><button className="btn">Voir l'annonce</button></Link>
+                <div key={annoucement.id} className="annoucement">
+                    <div className="container">
+                        <h3>{annoucement.title}</h3>
+                        <p>{annoucement.description}</p>
+                        <p>{annoucement.city}</p>
+                        <p>{annoucement.price}</p>
+                        <p>{annoucement.size} m2</p>
+                        <Link to={`/showAnnoucement/${annoucement.id}`}><button className="btn">Voir l'annonce</button></Link>
+                    </div>
                 </div>
             )}             
         </>
