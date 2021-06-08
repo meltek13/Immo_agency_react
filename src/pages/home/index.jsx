@@ -17,22 +17,22 @@ const Home = () => {
     const [sizeMax, setSizeMax] = useState(1000)
     const [inputValueMin, setInputValueMin] = useState(1)
     const [inputValueMax, setInputValueMax] = useState(1000000)
-    const [type2, setType2] = useState("")
+    const [type, setType] = useState("")
 
 
     const menu = (
         <Menu >
-          <Menu.Item key="Appartement" onClick={e => setType2("Appartement")}>
+          <Menu.Item key="Appartement" onClick={e => setType("Appartement")}>
              <div   value="Appartement" >
                 <span value="Appartement">Appartement</span>
              </div>
           </Menu.Item>
-          <Menu.Item key="Maison" onClick={e => setType2("Maison")}>
+          <Menu.Item key="Maison" onClick={e => setType("Maison")}>
              <div  value="Maison">
                 Maison
              </div>
           </Menu.Item>
-          <Menu.Item key="reset" onClick={e => setType2("")}>
+          <Menu.Item key="reset" onClick={e => setType("")}>
              <div  value="reset">
                 reinitialiser
              </div>
@@ -99,46 +99,44 @@ const Home = () => {
     </div> 
 
     <div className="FormFilter">
-      <form className="Invisible">   
+      <form className="Invisible"> 
 
-      <div className="someOptionsForSearch">  
-      <div className="someOptionInput1">
-          <h5>Type de bien</h5>
-          </div> 
-          <div className="someOptionInput1">
-          <h5>Surface min</h5>
-          </div> 
-          <div className="someOptionInput1">
-          <h5>Surface max</h5>
-          </div> 
+        <div className="someOptionsForSearch">  
+            <div className="someOptionInput1">
+              <h5>Type de bien :</h5>
+            </div> 
+            <div className="someOptionInput1">
+              <h5>Surface min (m²)</h5>
+            </div> 
+            <div className="someOptionInput1">
+              <h5>Surface max (m²)</h5>
+            </div> 
         </div>
-      <div className="someOptionsForSearch">  
-      
-      <div className="someOptionInput2">
-        <Dropdown overlay={menu}>
-              <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                {type2 === "" ? "Que voulez vous acheter" : type2} <DownOutlined />
-              </a>
-        </Dropdown>
-        </div>
+    
+        <div className="someOptionsForSearch">  
+            <div className="someOptionInput2">
+               <Dropdown overlay={menu}>
+                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                    {type === "" ? "Que voulez vous acheter" : type} <DownOutlined />
+                 </a>
+               </Dropdown>
+            </div>
         
-        <div className="someOptionInput2">
-        <InputNumber min={1} max={1000} defaultValue={1}  onChange={event => setSizeMin(event)} /> (M²)
+            <div className="someOptionInput2">
+               <InputNumber min={1} max={1000} defaultValue={1}  onChange={event => setSizeMin(event)} /> 
+            </div>
+            <div className="someOptionInput2">
+               <InputNumber min={1} max={1000} defaultValue={999} onChange={event => setSizeMax(event)} /> 
+            </div>
+        </div> 
+     
+        <div className="slideBar">
+            <h5>Budget :</h5>
+            <IntegerStepMin onchange={event => setInputValueMin(event)} value={inputValueMin}/>
+            <IntegerStepMax onchange={event => setInputValueMax(event)} value={inputValueMax}/>
         </div>
-        <div className="someOptionInput2">
-        <InputNumber min={1} max={1000} defaultValue={999} onChange={event => setSizeMax(event)} /> (M²)
-        </div>
-     </div> 
      
-     <div className="slideBar">
-     <h5>Budget</h5>
-        <IntegerStepMin onchange={event => setInputValueMin(event)} value={inputValueMin}/>
-        <IntegerStepMax onchange={event => setInputValueMax(event)} value={inputValueMax}/>
-     </div>
-     
-     <button className="buttonSearch2" onClick={onSelect}>Chercher</button>
-     
-        
+            <button className="buttonSearch2" onClick={onSelect}>Chercher</button>
       </form>
     </div>
 
