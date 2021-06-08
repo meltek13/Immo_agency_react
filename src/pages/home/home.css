@@ -12,11 +12,12 @@
 
 .annoucement{
   width: 80%;
-  height: 130px;
-  margin-bottom: 20px;
+  height: 180px;
   padding: 5px;
 }
-
+.annoucement p:nth-child(2) {
+  width: 75%;
+}
 
 .dropdown-type{
   border: 1px solid black;
@@ -38,7 +39,6 @@
  
 .container {
  display: flex;
-
  background-color: #fff;
  position: relative;
  border-radius: 5px;
@@ -75,3 +75,4 @@
   height: auto;
   margin-right:20px ;
 }
+
