@@ -36,34 +36,51 @@ const Navbar = () => {
     <div className="navbar">
       <div className="content-link">
 
-        <Link className="link " to="/"><span className="home-icon"><HomeOutlined /></span> 
-</Link>
+        <Link className="link " to="/">
+        <h6 className="title-nav">Home</h6>
+          <span className="home-icon"><HomeOutlined /></span>
+          
+        </Link>
 
       </div>
       { loged ? ( 
         <>
-        <div className="content-link">
-
-        <a href="" className="link" onClick={handleClick}>
-        <span className="disconnect-icon"><PoweroffOutlined /></span> 
-        </a>
-      </div>
       <div className="content-link">
         <Link className="link" to='/profil'>
+        <h6 className="title-nav">Profil</h6>
           <span className="home-icon"><UserOutlined /></span> 
         </Link>
       </div>
       <div className="content-link">
-        <Link className="link" to="/createAnnoucement"><span className="home-icon"><PlusSquareOutlined /></span></Link>
+        
+        <Link className="link" to="/createAnnoucement">
+          <h6 className="title-nav">Ajouter une annonce</h6>
+          <span className="home-icon"><PlusSquareOutlined /></span>
+          </Link>
+        
       </div>
+      <div className="content-link">
+          <a href="" className="link" onClick={handleClick}>
+          <h6 className="title-nav">Se deconnecter</h6>
+          <span className="disconnect-icon"><PoweroffOutlined /></span> 
+          </a>
+        </div>
       </>
       ) : (
         <>
       <div className="content-link">
-        <Link className="link" to="/signIn"><span className="connect-icon"><PoweroffOutlined /></span> </Link>
+      
+        <Link className="link" to="/signUp">
+        <h6 className="title-nav">S'inscrire</h6>
+          <span className="home-icon"><SolutionOutlined /></span>
+        </Link>
       </div>
       <div className="content-link">
-        <Link className="link" to="/signUp"><span className="home-icon"><SolutionOutlined /></span></Link>
+        
+        <Link className="link" to="/signIn">
+          <h6 className="title-nav">Se connecter</h6>
+          <span className="connect-icon"><PoweroffOutlined /></span> 
+        </Link>
       </div>
       </>
       )}
