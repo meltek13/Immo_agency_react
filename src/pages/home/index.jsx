@@ -15,8 +15,6 @@ const Home = () => {
 
     return (
         <>
-
-
             {annoucements.map(annoucement => 
                 <div key={annoucement.id} className="annoucement">
                     <Link to={`/showAnnoucement/${annoucement.id}`}>{annoucement.title}</Link>
