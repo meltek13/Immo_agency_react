@@ -41,28 +41,67 @@
 
 .buttonSearch{
   margin-left: 15px;
-  color: black;
-  height: 35px;
+  color: white;
+  height: 40px;
   cursor: pointer;
-  background-color: white;
+  background-color: #68C0FE;
   outline: none;
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 0px;
   border: 1px solid lightgray;
-  padding-left: 10px;
-  padding-right: 10px;
+  font-weight: 500;
+  font-size: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
+.buttonSearch2{
+  color: white;
+  height: 40px;
+  cursor: pointer;
+  background-color: #68C0FE;
+  outline: none;
+  border-radius: 10px 10px 0px 0px;
+  border: 1px solid lightgray;
+  font-weight: 500;
+  font-size: 18px;
+  padding-left: 25px;
+  padding-right: 25px;
+  
+}
+
+.someOptionInput1{
+  margin-right:25px;
+  margin-top:25px;
+  width: 23%;
+}
+.someOptionInput2{
+  margin-right:25px;
+  width: 23%;
+}
+
+.FormFilter{
+  border: 1px solid lightgray;
+  padding-left: 25px;
+  width: 79%;
+}
+
+
+.someOptionsForSearch{
+  display:flex;
+  flex-direction: row;
+}
 .filtre-icon{
   font-size: 30px;
   margin-right: 7px; 
 }
 
 .slideBar{
+  margin-top: 25px;
   margin-bottom: 20px;
 }
 
 .Filter{
-  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .Invisible{
