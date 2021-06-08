@@ -17,9 +17,14 @@
   padding: 5px;
 }
 
+
 .dropdown-type{
   border: 1px solid black;
   cursor: pointer;
   width: 100px;
   text-align: center;
+}
+
+.search-city{
+  padding: 20px;
 }

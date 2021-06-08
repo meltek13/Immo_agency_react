@@ -54,9 +54,9 @@ const SignIn = () => {
         <div className="Register">
           
         <form>
-        <input type="Email" name="Email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input type="Password" name="Password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button type="submit" onClick={fetchFunction} >Se connecter</button>
+        <input className="input-log" type="Email" name="Email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input className="input-log" type="Password" name="Password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <button className="input-log" type="submit" onClick={fetchFunction} >Se connecter</button>
       </form>
       
         </div>

@@ -6,3 +6,11 @@
 .content-input{
  padding: 20px;
 }
+.dropdown-type-create{
+  margin-top: 10px;
+  font-size: 15px;
+  border: 1px solid black;
+  cursor: pointer;
+  width: 100px;
+  text-align: center;
+}

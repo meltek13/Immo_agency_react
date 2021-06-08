@@ -59,10 +59,10 @@ const Navbar = () => {
       ) : (
         <>
       <div className="content-link">
-        <Link className="link" to="/sign-in"><span className="connect-icon"><PoweroffOutlined /></span> </Link>
+        <Link className="link" to="/signIn"><span className="connect-icon"><PoweroffOutlined /></span> </Link>
       </div>
       <div className="content-link">
-        <Link className="link" to="/sign-up"><span className="home-icon"><SolutionOutlined /></span></Link>
+        <Link className="link" to="/signUp"><span className="home-icon"><SolutionOutlined /></span></Link>
       </div>
       </>
       )}
