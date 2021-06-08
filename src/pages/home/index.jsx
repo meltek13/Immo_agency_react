@@ -120,18 +120,18 @@ const openFilter = () => {
   </div>
 
             {annoucements.map(annoucement => 
-                <div key={annoucement.id} className="annoucement">
+                <div key={annoucement.id} >
                     <div className="container">
                         {annoucement.typeHome === "Maison"?(
                             <img className='img-type' src={picHouses[0]} alt="maison" />
                         ):(<img className='img-type' src={picHouses[1]} alt="Appartement" />)}
-                        <div>
-                            <h3>{annoucement.title}</h3>
-                            <p>{annoucement.description}</p>
-                            <p>{annoucement.city}</p>
-                            <p>{annoucement.typeHome}</p>
-                            <p>{annoucement.price} €</p>
-                            <p>{annoucement.size} m2</p>
+                        <div className="box-infos">
+                            <h3 className="infos-profil">{annoucement.title}</h3>
+                            <p className="infos-profil">{annoucement.description}</p>
+                            <p className="infos-profil">{annoucement.city}</p>
+                            <p className="infos-profil">{annoucement.typeHome}</p>
+                            <p className="infos-profil">{annoucement.price} €</p>
+                            <p className="infos-profil">{annoucement.size} m2</p>
                         </div>
                         <Link to={`/showAnnoucement/${annoucement.id}`}><button className="btn">Voir l'annonce</button></Link>
                     </div>
