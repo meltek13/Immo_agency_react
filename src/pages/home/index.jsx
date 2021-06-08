@@ -7,11 +7,15 @@ const Home = () => {
     
     const [annoucements, setAnnoucements] = useState([])
     const [city, setCity] = useState('')
-
+    const [data, setData] = useState([])
+   
     useEffect(() => {
         fetch('http://localhost:3000/annoucements')
             .then((response) => response.json())
-            .then((response) =>  setAnnoucements(response))
+            .then((response) =>  {
+                setAnnoucements(response)
+                setData(response)
+            })
     }, [])
 
     
@@ -19,7 +23,7 @@ const Home = () => {
     
     const search = () => {
         setAnnoucements([])
-        annoucements.map(annoucement => annoucement.city === city && setAnnoucements(oldArray => [...oldArray, annoucement]))
+        data.map(annoucement => annoucement.city === city && setAnnoucements(oldArray => [...oldArray, annoucement]))
         city === '' && fetch('http://localhost:3000/annoucements')
         .then((response) => response.json())
         .then((response) =>  setAnnoucements(response))
