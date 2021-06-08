@@ -15,7 +15,6 @@ import Profil from './pages/profil'
 import SignUp from 'pages/sign_up'
 import SignIn from 'pages/sign_in'
 import ShowAnnoucement from './pages/showAnnoucement'
-import UpdateAnnoucement from './pages/UpdateAnnoucement'
 import UpdateAnnoucment from "pages/UpdateAnnoucement";
 // import Footer from './components/Footer'
 
@@ -34,6 +33,9 @@ const App = () => (
       </Route>
       <Route path="/annoucement/update/:id">
         <UpdateAnnoucment/>
+      </Route>
+      <Route path="/showAnnoucement/:id">
+        <ShowAnnoucement/>
       </Route>
       <Route path="/signUp">
       <SignUp/>
