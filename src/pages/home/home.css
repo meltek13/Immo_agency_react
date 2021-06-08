@@ -12,9 +12,11 @@
 
 .annoucement{
   width: 80%;
-  height: 180px;
-  padding: 5px;
+  height: 130px;
+  margin-bottom: 150px;
+  padding: 10px;
 }
+
 .annoucement p:nth-child(2) {
   width: 75%;
 }
@@ -25,7 +27,6 @@
   width: 100px;
   text-align: center;
 }
-
 
 .SearchBar{
   outline: none;
@@ -68,12 +69,12 @@
   display: none;
 }
 
-
+/* 
 * {
  margin: 0;
  padding: 0;
  box-sizing: border-box;
-}
+} */
 
  
 .container {
@@ -114,5 +115,4 @@
   height: auto;
   margin-right:20px ;
 }
-
 
