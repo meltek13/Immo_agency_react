@@ -1,14 +1,19 @@
 import React, {useState ,useEffect } from 'react'
-import Cookies from "js-cookie";
+import Cookies, { remove } from "js-cookie";
 import { useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
 import { useHistory } from "react-router-dom";
+
+import { Link } from 'react-router-dom';
+
 import './index.scss'
 
 const Profil = () => {
 
   const [email, setEmail] = useState("")
   const [id, setId] = useState("")
+  const [annoucements, setAnnoucements] = useState([])
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -22,7 +27,6 @@ const Profil = () => {
     })
       .then((response) => response.json())
       .then((response) => {
-       console.log(response)
       setEmail(response.current_user.email)
       setId(response.current_user.id)
       });  
@@ -43,7 +47,6 @@ const Profil = () => {
         })
           .then((response) => response.json())
           .then((response) => {
-           console.log(response)
            Cookies.remove("token");
            Cookies.remove("current_user_id")
            dispatch(logOut());
@@ -52,20 +55,41 @@ const Profil = () => {
           });     
     };
 
+    useEffect(() => {
+      fetch('http://localhost:3000/annoucements')
+            .then((response) => response.json())
+            .then((response) =>  response.map(annoucement => annoucement.user_id === parseInt(Cookies.get("current_user_id")) && setAnnoucements(oldArray => [...oldArray, annoucement])))
+    }, [])
+    
+    const remove = (id) => {
+      fetch('http://localhost:3000/annoucements/' + id, {
+        method: "DELETE"
+      })
+    }
+
+
   return(
     <>
       <div id="container-profil">
-        <h1>Profil User</h1>
         <div id="box-infos">
-          <p className='id'>#ID {id}</p>
           <p className='email'>{email}</p>
-
         </div>
-        <div className="pictures-immo">
-          <h2>Nombre de biens:</h2>
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="" />
-        </div>
-        <button onClick={deleteAccount}>delete</button>
+        <h3>Mes annonces</h3>
+        {annoucements.map(annoucement => 
+          <div key={annoucement.id} className="annoucement">
+            <p>Titre: {annoucement.title}</p>
+            <p>Description: {annoucement.description}</p>
+            <p>Prix: {annoucement.price}€</p>
+            <p>Adress: {annoucement.adress}</p>
+            <p>Type: {annoucement.typeHome}</p>
+            <p>Ville: {annoucement.city}</p>
+            <p>Taille: {annoucement.size} m2</p>
+            <br/>
+            <Link to={`/annoucement/update/${annoucement.id}`}><button>Modifier l'annonce</button></Link>
+            <button onClick={() => remove(annoucement.id)}>Supprimer mon annonce</button>
+          </div>
+          )}  
+        <button onClick={deleteAccount}>Supprimer mon compte</button>
       </div>
     </>
   )

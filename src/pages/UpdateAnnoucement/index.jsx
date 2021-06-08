@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import './annoucement.css'
+import { useParams } from 'react-router'
 import Cookies from "js-cookie";
-import Dropdown from 'react-dropdown';
 
-const CreateAnnoucement = () => {
+const UpdateAnnoucment = () => {
 
+  let { id } = useParams();
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [adress, setAdress] = useState('')
@@ -12,11 +12,11 @@ const CreateAnnoucement = () => {
   const [city, setCity] = useState('')
   const [price, setPrice] = useState('')
   const [size, setSize] = useState('')
-  const [type, setType] = useState('Maison')
+  const [type, setType] = useState('')
 
-  const create = () => {
-    fetch("http://localhost:3000/annoucements", {
-      method: "POST",
+  const update = () => {
+    fetch("http://localhost:3000/annoucements/" + id, {
+      method: "PUT",
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
@@ -25,16 +25,7 @@ const CreateAnnoucement = () => {
     })
   }
 
-  const options = [
-    'Maison', 'Appartement'
-  ];
 
-  const defaultOption = options[0];
-  
-  const onSelect = (typeHome) => {
-    setType(typeHome)
-  }
-  
   return (
     <div className="content-input">
       <form>
@@ -45,12 +36,11 @@ const CreateAnnoucement = () => {
         <input className="form" onChange={event => setCity(event.target.value)} placeholder="Ville"/>
         <input className="form" onChange={event => setPrice(event.target.value)} placeholder="Prix"/>
         <input className="form" onChange={event => setSize(event.target.value)} placeholder="Taille"/>
-        <Dropdown className="dropdown-type-create" options={options} onChange={e => onSelect(e.value)} value={defaultOption} placeholder="Choisi une option" />
-        <button className="form" onClick={create}>Creer une annonce</button>
+        <input className="form" onChange={event => setType(event.target.value)} placeholder="appartement ou maison"/>
+        <button className="form" onClick={update}>Modifier mon annonce</button>
       </form>
     </div>
   )
 }
 
-
-export default CreateAnnoucement
+export default UpdateAnnoucment
