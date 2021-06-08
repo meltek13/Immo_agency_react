@@ -13,7 +13,6 @@ const Profil = () => {
   const [email, setEmail] = useState("")
   const [id, setId] = useState("")
   const [annoucements, setAnnoucements] = useState([])
-
   const dispatch = useDispatch();
   const history = useHistory();
 
