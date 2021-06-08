@@ -33,10 +33,10 @@ const App = () => (
       <Route path="/showAnnoucement/:id">
         <ShowAnnoucement/>
       </Route>
-      <Route path="/sign-up">
+      <Route path="/signUp">
       <SignUp/>
       </Route>
-      <Route path="/sign-in">
+      <Route path="/signIn">
       <SignIn/>
       </Route>
       <Route path="/profil">
