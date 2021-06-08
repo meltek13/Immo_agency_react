@@ -95,28 +95,28 @@ const openFilter = () => {
 
     return (
         <>
- <form className="form" action="">
-      <input
-        onChange={event => setCity(event.target.value)}
-        className="SearchBar"
-        type="search"
-        placeholder=" Paris, Singapour, Tokyo ..."
-      />
-      <button className="buttonSearch" onClick={search}>Chercher</button>
- </form>
+ <form>
+        <input
+            onChange={event => setCity(event.target.value)}
+            className="SearchBar"
+            type="search"
+            placeholder=" Paris, Singapour, Tokyo ..."
+        />
+        <button className="buttonSearch" onClick={search}>Chercher</button>
+    </form>
 
-  <div className="Filter" onClick={openFilter}>
-    <span className="filtre-icon"><ControlOutlined /></span>
-  </div>  
-  <div className="FormFilter">
-  <form className="Invisible">
-     <Dropdown className="dropdown-type" options={options} onChange={event => setType(event.value)} value={type} placeholder="Choisis une option" />
-   <div className="slideBar">
-     <IntegerStepMin onchange={event => setInputValueMin(event)} value={inputValueMin}/>
-     <IntegerStepMax onchange={event => setInputValueMax(event)} value={inputValueMax}/>
-   </div>
-     <button className="buttonSearch" onClick={onSelect}>Chercher</button>
-  </form>
+    <div className="Filter" onClick={openFilter}>
+        <span className="filtre-icon"><ControlOutlined /></span>
+    </div>  
+    <div className="FormFilter">
+    <form className="Invisible">
+        <Dropdown className="dropdown-type" options={options} onChange={event => setType(event.value)} value={type} placeholder="Choisis une option" />
+    <div className="slideBar">
+        <IntegerStepMin onchange={event => setInputValueMin(event)} value={inputValueMin}/>
+        <IntegerStepMax onchange={event => setInputValueMax(event)} value={inputValueMax}/>
+    </div>
+        <button className="buttonSearch" onClick={onSelect}>Chercher</button>
+    </form>
   </div>
 
             {annoucements.map(annoucement => 
