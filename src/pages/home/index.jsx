@@ -13,6 +13,7 @@ const Home = () => {
     const [annoucements, setAnnoucements] = useState([])
     const [city, setCity] = useState('')
     const [data, setData] = useState([])
+
     const [inputValueMin, setInputValueMin] = useState(1)
     const [inputValueMax, setInputValueMax] = useState(1000000)
     const [type, setType] = useState("Type")
@@ -43,6 +44,14 @@ const openFilter = () => {
  }
  
 }
+
+
+    const picHouses = ['https://images.unsplash.com/photo-1567428485548-c499e4931c10?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80',
+    'https://images.unsplash.com/photo-1565721219423-c8cd193201c5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+    ]
+
+    
+   
 
     useEffect(() => {
         fetch('http://localhost:3000/annoucements')
@@ -112,11 +121,20 @@ const openFilter = () => {
 
             {annoucements.map(annoucement => 
                 <div key={annoucement.id} className="annoucement">
-                    <Link to={`/showAnnoucement/${annoucement.id}`}>{annoucement.title}</Link>
-                    <p>{annoucement.description}</p>
-                    <p>{annoucement.city}</p>
-                    <p>{annoucement.price}</p>
-                    <p>{annoucement.size} m2</p>
+                    <div className="container">
+                        {annoucement.typeHome === "Maison"?(
+                            <img className='img-type' src={picHouses[0]} alt="maison" />
+                        ):(<img className='img-type' src={picHouses[1]} alt="Appartement" />)}
+                        <div>
+                            <h3>{annoucement.title}</h3>
+                            <p>{annoucement.description}</p>
+                            <p>{annoucement.city}</p>
+                            <p>{annoucement.typeHome}</p>
+                            <p>{annoucement.price} €</p>
+                            <p>{annoucement.size} m2</p>
+                        </div>
+                        <Link to={`/showAnnoucement/${annoucement.id}`}><button className="btn">Voir l'annonce</button></Link>
+                    </div>
                 </div>
             )}             
         </>

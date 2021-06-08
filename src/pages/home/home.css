@@ -11,12 +11,13 @@
 }
 
 .annoucement{
-  border: 1px solid black;
   width: 80%;
-  margin-bottom: 20px;
+  height: 180px;
   padding: 5px;
 }
-
+.annoucement p:nth-child(2) {
+  width: 75%;
+}
 
 .dropdown-type{
   border: 1px solid black;
@@ -24,6 +25,7 @@
   width: 100px;
   text-align: center;
 }
+
 
 .SearchBar{
   outline: none;
@@ -65,3 +67,52 @@
 .Invisible{
   display: none;
 }
+
+
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+}
+
+ 
+.container {
+ display: flex;
+ background-color: #fff;
+ position: relative;
+ border-radius: 5px;
+ box-shadow: 0 15px 20px rgba(0, 0, 0, 0.156);
+ padding: 10px;
+ }
+ 
+ .btn {
+  position: absolute;
+  bottom: 5px;
+  right:10px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  background-color: black;
+  color: #fff;
+  padding: 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.294);
+  transition: all 250ms ease-in-out;
+}
+
+.btn:hover{
+  right: 5px;
+}
+
+.img-type{
+  width: 150px;
+  border-radius: 10px;
+  height: auto;
+  margin-right:20px ;
+}
+
+

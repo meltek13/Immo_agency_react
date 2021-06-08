@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import './annoucement.css'
 import Cookies from "js-cookie";
 import Dropdown from 'react-dropdown';
+import ButtonCreate from "../../components/ButtonCreate"
+import ButtonUpdate from 'components/ButtonUpdate';
 
 const CreateAnnoucement = () => {
 
@@ -46,7 +48,7 @@ const CreateAnnoucement = () => {
         <input className="form" onChange={event => setPrice(event.target.value)} placeholder="Prix"/>
         <input className="form" onChange={event => setSize(event.target.value)} placeholder="Taille"/>
         <Dropdown className="dropdown-type-create" options={options} onChange={e => onSelect(e.value)} value={defaultOption} placeholder="Choisi une option" />
-        <button className="form" onClick={create}>Creer une annonce</button>
+        <ButtonCreate action={create} name="Creer une annonce"/>
       </form>
     </div>
   )

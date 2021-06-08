@@ -4,26 +4,47 @@ import {
  useParams
 } from "react-router-dom";
 import Cookies from "js-cookie";
+import './index.css';
+import { Link } from 'react-router-dom';
 
 const ShowAnnoucement = () => {
 
   const [annoucement, setAnnoucement] = useState('');
-  const [idUser, setIdUser] = useState('');
- 
+  const [idUser, setIdUser] = useState(0);
+  const [user, setUser] = useState('');
 
   let { id } = useParams();
-  
-  useEffect(() => {
-   fetch("http://localhost:3000/annoucements/" + id)
+
+  const findUser = () => {
+    fetch("http://localhost:3000/annoucements/" + id)
     .then((response) => response.json())
     .then((response) => {setAnnoucement(response);
     setIdUser(response.user_id)})
-  }, [])
-  console.log(annoucement)
+  }
 
+  const allUser = () => {
+    fetch("http://localhost:3000/members", {
+      method: "get",
+      headers: {
+        Authorization: Cookies.get("token"),
+        "Content-Type": "application/json",
+      }, 
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        response.users.map(user => user.id === idUser && setUser(user))
+      });  
+  };
+
+
+  useEffect(() => {
+    findUser()
+    allUser()
+  }, [idUser])
 
  return (
-  <div className="annoucement">
+  <div className="annoucement-profil">
+    <p>de {user.email}</p>
     <p>Titre: {annoucement.title}</p>
     <p>Description: {annoucement.description}</p>
     <p>Prix: {annoucement.price}€</p>
@@ -31,6 +52,7 @@ const ShowAnnoucement = () => {
     <p>Type: {annoucement.typeHome}</p>
     <p>Ville: {annoucement.city}</p>
     <p>Taille: {annoucement.size} m2</p>
+    <Link to={'/'}><button className="btn">retour</button></Link>
   </div>
  )
 }

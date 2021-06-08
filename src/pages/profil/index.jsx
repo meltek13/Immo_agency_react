@@ -3,9 +3,9 @@ import Cookies, { remove } from "js-cookie";
 import { useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
 import { useHistory } from "react-router-dom";
-
 import { Link } from 'react-router-dom';
-
+import ButtonDelete from '../../components/ButtonDelete'
+import ButtonUpdate from '../../components/ButtonUpdate'
 import './index.scss'
 
 const Profil = () => {
@@ -72,23 +72,25 @@ const Profil = () => {
       <div id="container-profil">
         <div id="box-infos">
           <p className='email'>{email}</p>
+          <ButtonDelete action={deleteAccount} className='delete-account' name="Supprimer mon compte"/>
         </div>
         <h3>Mes annonces</h3>
         {annoucements.map(annoucement => 
-          <div key={annoucement.id} className="annoucement">
-            <p>Titre: {annoucement.title}</p>
-            <p>Description: {annoucement.description}</p>
-            <p>Prix: {annoucement.price}€</p>
-            <p>Adress: {annoucement.adress}</p>
-            <p>Type: {annoucement.typeHome}</p>
-            <p>Ville: {annoucement.city}</p>
-            <p>Taille: {annoucement.size} m2</p>
-            <br/>
-            <Link to={`/annoucement/update/${annoucement.id}`}><button>Modifier l'annonce</button></Link>
-            <button onClick={() => remove(annoucement.id)}>Supprimer mon annonce</button>
+          <div key={annoucement.id} >
+            <div className="container container-annoucement">
+              <p>Titre: {annoucement.title}</p>
+              <p>Description: {annoucement.description}</p>
+              <p>Prix: {annoucement.price}€</p>
+              <p>Adress: {annoucement.adress}</p>
+              <p>Type: {annoucement.typeHome}</p>
+              <p>Ville: {annoucement.city}</p>
+              <p>Taille: {annoucement.size} m2</p>
+              <br/>
+              <Link to={`/annoucement/update/${annoucement.id}`}><ButtonUpdate name="Modifier l'annonce"/></Link>
+              <ButtonDelete action={() => remove(annoucement.id)} name="Supprimer mon annonce"/>
+            </div>
           </div>
           )}  
-        <button onClick={deleteAccount}>Supprimer mon compte</button>
       </div>
     </>
   )
