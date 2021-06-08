@@ -27,14 +27,23 @@
   width: 100px;
   text-align: center;
 }
+.titleWhere{
+  margin-bottom:15px;
+}
 
+.circle{
+  border-radius: 20px;
+  padding:0px 1px;
+  background-color:#68C0FE;
+  color:white;
+}
 .SearchBar{
   outline: none;
   border-radius: 10px 0px 0px 10px;
   border: 1px solid lightgray;
   padding-left: 30px;
   padding-right: 8px;
-  margin: 15px 0px;
+  margin-bottom: 15px;
   height: 40px;
   width: 60%;
   border-right:none;

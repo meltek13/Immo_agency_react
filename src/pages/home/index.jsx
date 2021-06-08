@@ -84,6 +84,8 @@ const Home = () => {
 
     return (
         <>
+        <h3 className="titleWhere">Où cherchez-vous ?</h3>
+        <h5 className="tileLocality">LOCALITÉS</h5>
     <form>
         <input
             onChange={event => setCity(event.target.value)}
@@ -95,7 +97,7 @@ const Home = () => {
     </form>
 
     <div className="Filter" onClick={openFilter}>
-        <span><span className="filtre-icon"><ControlOutlined /></span> Plus de critère <DownOutlined /></span>
+        <span><span className="filtre-icon"><ControlOutlined /></span> Plus de critère <span className="circle"><DownOutlined /></span></span>
     </div> 
 
     <div className="FormFilter">
@@ -103,13 +105,13 @@ const Home = () => {
 
         <div className="someOptionsForSearch">  
             <div className="someOptionInput1">
-              <h5>Type de bien :</h5>
+              <h5>TYPE DE BIEN :</h5>
             </div> 
             <div className="someOptionInput1">
-              <h5>Surface min (m²)</h5>
+              <h5>SURFACE MIN (m²)</h5>
             </div> 
             <div className="someOptionInput1">
-              <h5>Surface max (m²)</h5>
+              <h5>SURFACE MAX (m²)</h5>
             </div> 
         </div>
     
@@ -117,7 +119,7 @@ const Home = () => {
             <div className="someOptionInput2">
                <Dropdown overlay={menu}>
                  <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                    {type === "" ? "Que voulez vous acheter" : type} <DownOutlined />
+                    {type === "" ? "Que voulez vous acheter ? " : type} <DownOutlined />
                  </a>
                </Dropdown>
             </div>
@@ -131,7 +133,7 @@ const Home = () => {
         </div> 
      
         <div className="slideBar">
-            <h5>Budget :</h5>
+            <h5>BUDGET :</h5>
             <IntegerStepMin onchange={event => setInputValueMin(event)} value={inputValueMin}/>
             <IntegerStepMax onchange={event => setInputValueMax(event)} value={inputValueMax}/>
         </div>
