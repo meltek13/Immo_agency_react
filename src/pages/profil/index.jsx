@@ -3,9 +3,9 @@ import Cookies, { remove } from "js-cookie";
 import { useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
 import { useHistory } from "react-router-dom";
-
 import { Link } from 'react-router-dom';
-
+import ButtonDelete from '../../components/ButtonDelete'
+import ButtonUpdate from '../../components/ButtonUpdate'
 import './index.scss'
 
 const Profil = () => {
@@ -85,11 +85,11 @@ const Profil = () => {
             <p>Ville: {annoucement.city}</p>
             <p>Taille: {annoucement.size} m2</p>
             <br/>
-            <Link to={`/annoucement/update/${annoucement.id}`}><button>Modifier l'annonce</button></Link>
-            <button onClick={() => remove(annoucement.id)}>Supprimer mon annonce</button>
+            <Link to={`/annoucement/update/${annoucement.id}`}><ButtonUpdate name="Modifier l'annonce"/></Link>
+            <ButtonDelete action={() => remove(annoucement.id)} name="Supprimer mon annonce"/>
           </div>
           )}  
-        <button onClick={deleteAccount}>Supprimer mon compte</button>
+          <ButtonDelete action={deleteAccount} name="Supprimer mon compte"/>
       </div>
     </>
   )
