@@ -3,20 +3,6 @@ import { Slider, InputNumber, Row, Col } from 'antd';
 import 'antd/dist/antd.css';
 
 const IntegerStep = ({onchange, value}) => {
-  
-   
-    const [inputValueMin, setInputValueMin] = useState(1)
-    const [inputValueMax, setInputValueMax] = useState(1000000)
-
-    const onChangeMin = (e) => {
-        setInputValueMin(e)
-    
-    };
-
-    const onChangeMax = (e) => {
-        setInputValueMax(e)
-     
-    };
 
       return (
           
