@@ -26,9 +26,48 @@
   text-align: center;
 }
 
-.search-city{
-  padding: 20px;
+
+.SearchBar{
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 30px;
+  padding-right: 8px;
+  margin: 15px 0px;
+  height: 35px;
+  width: 40%;
 }
+
+.buttonSearch{
+  margin-left: 15px;
+  color: black;
+  height: 35px;
+  cursor: pointer;
+  background-color: white;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.filtre-icon{
+  font-size: 30px;
+  margin-right: 7px; 
+}
+
+.slideBar{
+  margin-bottom: 20px;
+}
+
+.Filter{
+  margin-bottom: 10px;
+}
+
+.Invisible{
+  display: none;
+}
+
 
 * {
  margin: 0;
@@ -75,4 +114,5 @@
   height: auto;
   margin-right:20px ;
 }
+
 
