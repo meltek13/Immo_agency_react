@@ -76,20 +76,22 @@ const Profil = () => {
         </div>
         <h3>Mes annonces</h3>
         {annoucements.map(annoucement => 
-          <div key={annoucement.id} className="annoucement">
-            <p>Titre: {annoucement.title}</p>
-            <p>Description: {annoucement.description}</p>
-            <p>Prix: {annoucement.price}€</p>
-            <p>Adress: {annoucement.adress}</p>
-            <p>Type: {annoucement.typeHome}</p>
-            <p>Ville: {annoucement.city}</p>
-            <p>Taille: {annoucement.size} m2</p>
-            <br/>
-            <Link to={`/annoucement/update/${annoucement.id}`}><ButtonUpdate name="Modifier l'annonce"/></Link>
-            <ButtonDelete action={() => remove(annoucement.id)} name="Supprimer mon annonce"/>
+          <div key={annoucement.id} >
+            <div className="container container-annoucement">
+              <p>Titre: {annoucement.title}</p>
+              <p>Description: {annoucement.description}</p>
+              <p>Prix: {annoucement.price}€</p>
+              <p>Adress: {annoucement.adress}</p>
+              <p>Type: {annoucement.typeHome}</p>
+              <p>Ville: {annoucement.city}</p>
+              <p>Taille: {annoucement.size} m2</p>
+              <br/>
+              <Link to={`/annoucement/update/${annoucement.id}`}><ButtonUpdate name="Modifier l'annonce"/></Link>
+              <ButtonDelete action={() => remove(annoucement.id)} name="Supprimer mon annonce"/>
+            </div>
           </div>
           )}  
-          <ButtonDelete action={deleteAccount} name="Supprimer mon compte"/>
+          <ButtonDelete action={deleteAccount} className='delete-account' name="Supprimer mon compte"/>
       </div>
     </>
   )
