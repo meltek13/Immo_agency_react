@@ -50,12 +50,14 @@ const Home = () => {
 
     return (
         <>
+
             <div className="search-city">
                 <input onChange={event => setCity(event.target.value)} placeholder="Ta ville"/>
                 <button onClick={search}>Chercher</button>
             </div>
 
   <Dropdown className="dropdown-type" options={options} onChange={e => onSelect(e.value)} value={defaultOption} placeholder="Choisi une option" />
+
             {annoucements.map(annoucement => 
                 <div key={annoucement.id} className="annoucement">
                     <Link to={`/showAnnoucement/${annoucement.id}`}>{annoucement.title}</Link>

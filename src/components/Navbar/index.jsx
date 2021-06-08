@@ -6,13 +6,14 @@ import "./navbar.scss"
 import Cookies from "js-cookie";
 import { useSelector, useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
-import { HomeOutlined, PoweroffOutlined, UserOutlined, PlusSquareOutlined, SolutionOutlined   } from '@ant-design/icons'
+import { HomeOutlined, PoweroffOutlined, UserOutlined, PlusSquareOutlined, SolutionOutlined } from '@ant-design/icons'
 
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const loged = useSelector((state) => state.loged);
 
+ 
   const handleClick = (e) => {
     e.preventDefault();
  
@@ -48,12 +49,12 @@ const Navbar = () => {
         </a>
       </div>
       <div className="content-link">
-        <Link className="link" to='/profil'><span className="home-icon"><UserOutlined /></span> </Link>
+        <Link className="link" to='/profil'>
+          <span className="home-icon"><UserOutlined /></span> 
+        </Link>
       </div>
       <div className="content-link">
-
         <Link className="link" to="/createAnnoucement"><span className="home-icon"><PlusSquareOutlined /></span></Link>
-
       </div>
       </>
       ) : (

@@ -3,10 +3,13 @@ import Cookies, { remove } from "js-cookie";
 import { useDispatch} from "react-redux";
 import { logOut } from "store-redux/index";
 import { useHistory } from "react-router-dom";
+
 import { Link } from 'react-router-dom';
+
 import './index.scss'
 
 const Profil = () => {
+
   const [email, setEmail] = useState("")
   const [id, setId] = useState("")
   const [annoucements, setAnnoucements] = useState([])
@@ -26,15 +29,14 @@ const Profil = () => {
       .then((response) => {
       setEmail(response.current_user.email)
       setId(response.current_user.id)
-      });
-  
+      });  
 };
       
     useEffect(() => {
         fetchFunction();
       }, []);
  
-      const deleteAccount = (e) => {
+    const deleteAccount = (e) => {
  
         fetch(`http://localhost:3000/members/${id}`, {
           method: "delete",
@@ -50,8 +52,7 @@ const Profil = () => {
            dispatch(logOut());
            history.push("/")
             
-          });
-      
+          });     
     };
 
     useEffect(() => {
@@ -65,6 +66,7 @@ const Profil = () => {
         method: "DELETE"
       })
     }
+
 
   return(
     <>
