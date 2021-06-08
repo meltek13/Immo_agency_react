@@ -73,6 +73,7 @@ const Profil = () => {
       <div id="container-profil">
         <div id="box-infos">
           <p className='email'>{email}</p>
+          <ButtonDelete action={deleteAccount} className='delete-account' name="Supprimer mon compte"/>
         </div>
         <h3>Mes annonces</h3>
         {annoucements.map(annoucement => 
@@ -91,7 +92,6 @@ const Profil = () => {
             </div>
           </div>
           )}  
-          <ButtonDelete action={deleteAccount} className='delete-account' name="Supprimer mon compte"/>
       </div>
     </>
   )
