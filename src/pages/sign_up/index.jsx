@@ -50,15 +50,16 @@ const SignUp = () => {
   
 
   return (
+    <>
     <div className="Register">
         <form>
-        {confirmPassword !== password && <p className="error-log">Le mot de passe de confirmation n'est pas pareil que le mot de passe</p>}
         <input className="input-log" type="Email" name="Email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <input className="input-log" type="Password" name="Password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
         <input className="input-log" type="Password" name="Password" placeholder="Mot de passe de confirmation"  onChange={(e) => setConfirmPassword(e.target.value)} />
-        <button className="input-log" type="submit" onClick={fetchFunction} >S'inscrire</button>
+        <button className="button-log" type="submit" onClick={fetchFunction} >S'inscrire</button>
       </form>
     </div>
+    </>
   );
 };
 
