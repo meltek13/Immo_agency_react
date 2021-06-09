@@ -32,3 +32,23 @@
   top: 50px;
   left: 100px;
 }
+.btn-signin {
+  position: relative;
+
+  color: black;
+  height: 35px;
+  width: 310px;
+  cursor: pointer;
+  background-color: white;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.100);
+  transition: all 250ms ease-in-out;
+}
+.btn-signin:hover{
+  background-color: black;
+  color: white;
+}
