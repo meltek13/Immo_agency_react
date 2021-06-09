@@ -176,4 +176,23 @@
   margin-bottom: 380px;
   top: 180px;
   left: 600px;
+  animation: bouncy 4s ease-in-out infinite;
+}
+@keyframes bouncy{
+  0%{
+    top: 180px;
+  }
+  50%{
+    top: 195px;
+  }
+  100%{
+    top: 180px;
+  }
+}
+
+.h1-welcome{
+  font-size: 48px;
+  position: absolute;
+  width: 350px ;
+  top: 100px;
 }

@@ -86,6 +86,7 @@ const Home = () => {
 
     return (
         <>
+        <h1 className="h1-welcome">Bienvenue <br /> sur Immo 👋  </h1>
         <img className="svg-welcome" src={welcome_svg} alt="maisons" />
         <h2 className="titleWhere">Où cherchez-vous ?</h2>
         <h4 className="tileLocality">LOCALITÉS</h4>
