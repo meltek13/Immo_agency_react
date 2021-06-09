@@ -1,58 +1,106 @@
-import React, { useState } from 'react'
-import './annoucement.css'
+import React, { useState } from "react";
+import "./annoucement.css";
 import Cookies from "js-cookie";
-import Dropdown from 'react-dropdown';
-import ButtonCreate from "../../components/ButtonCreate"
-import ButtonUpdate from 'components/ButtonUpdate';
+import Dropdown from "react-dropdown";
+import ButtonCreate from "../../components/ButtonCreate";
+import ButtonUpdate from "components/ButtonUpdate";
 
 const CreateAnnoucement = () => {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [adress, setAdress] = useState("");
+  const [zipCode, setZipCode] = useState("");
+  const [city, setCity] = useState("");
+  const [price, setPrice] = useState("");
+  const [size, setSize] = useState("");
+  const [type, setType] = useState("Maison");
+  const [featuredImage, setFeaturedImage] = useState("");
 
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
-  const [adress, setAdress] = useState('')
-  const [zipCode, setZipCode] = useState('')
-  const [city, setCity] = useState('')
-  const [price, setPrice] = useState('')
-  const [size, setSize] = useState('')
-  const [type, setType] = useState('Maison')
+  const create = (event) => {
+    event.preventDefault();
 
-  const create = () => {
+    const formData = new FormData();
+
+    formData.append("user_id", Cookies.get("current_user_id"));
+    formData.append("title", title);
+    formData.append("description", description);
+    formData.append("adress", adress);
+    formData.append("zip_code", zipCode);
+    formData.append("city", city);
+    formData.append("price", price);
+    formData.append("size", size);
+    formData.append("typeHome", type);
+    formData.append("featured_image", featuredImage);
+
     fetch("http://localhost:3000/annoucements", {
       method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({user_id: Cookies.get("current_user_id") ,title: title, description: description, adress: adress, zip_code: zipCode, city: city, price: price, size: size, typeHome: type})
-    })
-  }
+      body: formData,
+    }).catch((error) => console.log(error));
+  };
 
-  const options = [
-    'Maison', 'Appartement'
-  ];
+  const options = ["Maison", "Appartement"];
 
   const defaultOption = options[0];
-  
+
   const onSelect = (typeHome) => {
-    setType(typeHome)
-  }
-  
+    setType(typeHome);
+  };
+
   return (
     <div className="content-input">
       <form>
-        <input className="form" onChange={event => setTitle(event.target.value)} placeholder="Titre"/>
-        <input className="form" onChange={event => setDescription(event.target.value)} placeholder="Description"/>
-        <input className="form" onChange={event => setAdress(event.target.value)} placeholder="Adress"/>
-        <input className="form" onChange={event => setZipCode(event.target.value)} placeholder="Code postal"/>
-        <input className="form" onChange={event => setCity(event.target.value)} placeholder="Ville"/>
-        <input className="form" onChange={event => setPrice(event.target.value)} placeholder="Prix"/>
-        <input className="form" onChange={event => setSize(event.target.value)} placeholder="Taille"/>
-        <Dropdown className="dropdown-type-create" options={options} onChange={e => onSelect(e.value)} value={defaultOption} placeholder="Choisi une option" />
-        <ButtonCreate action={create} name="Creer une annonce"/>
+        <input
+          className="form"
+          onChange={(event) => setTitle(event.target.value)}
+          placeholder="Titre"
+        />
+        <input
+          className="form"
+          onChange={(event) => setDescription(event.target.value)}
+          placeholder="Description"
+        />
+        <input
+          className="form"
+          onChange={(event) => setAdress(event.target.value)}
+          placeholder="Adress"
+        />
+        <input
+          className="form"
+          onChange={(event) => setZipCode(event.target.value)}
+          placeholder="Code postal"
+        />
+        <input
+          className="form"
+          onChange={(event) => setCity(event.target.value)}
+          placeholder="Ville"
+        />
+        <input
+          className="form"
+          onChange={(event) => setPrice(event.target.value)}
+          placeholder="Prix"
+        />
+        <input
+          className="form"
+          onChange={(event) => setSize(event.target.value)}
+          placeholder="Taille"
+        />
+        <Dropdown
+          className="dropdown-type-create"
+          options={options}
+          onChange={(e) => onSelect(e.value)}
+          value={defaultOption}
+          placeholder="Choisi une option"
+        />
+        <input
+          type="file"
+          accept="image/*"
+          multiple={false}
+          onChange={(event) => setFeaturedImage(event.target.files[0])}
+        />
+        <ButtonCreate action={create} name="Creer une annonce" />
       </form>
     </div>
-  )
-}
+  );
+};
 
-
-export default CreateAnnoucement
+export default CreateAnnoucement;
