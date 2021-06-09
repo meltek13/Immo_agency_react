@@ -7,7 +7,7 @@ const IntegerStep = ({onchange, value}) => {
       return (
           
         <Row>
-          <Col span={12}>
+          <Col span={15}>
             <Slider
               min={1}
               max={1000000}
@@ -24,7 +24,7 @@ const IntegerStep = ({onchange, value}) => {
               onChange={onchange}
             />
           </Col>
-          <p>€/minimum</p>
+          <p>{value} € / minimum</p>
         </Row>
          
       );
