@@ -169,3 +169,11 @@
   margin: 0;
   padding: 0;
 }
+
+.svg-welcome{
+  position: relative;
+  transform: scale(5.5);
+  margin-bottom: 380px;
+  top: 180px;
+  left: 600px;
+}
