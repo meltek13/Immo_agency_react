@@ -41,14 +41,14 @@ const SignUp = () => {
       return response.json()}
     )
       .then((userdata) => {
+        
         (Cookies.get("token") !== "null") && 
+        
           Cookies.set("current_user_id", userdata.user.id)
           dispatch(logIn());
           history.push("/");
       });
     };
-  
-
   return (
     <>
     <div className="Register">
