@@ -32,7 +32,7 @@ const CreateAnnoucement = () => {
     formData.append("typeHome", type);
     formData.append("featured_image", featuredImage);
 
-    fetch("http://localhost:3000/annoucements", {
+    fetch("https://immo-react.herokuapp.com/annoucements", {
       method: "POST",
       body: formData,
     }).catch((error) => console.log(error));
