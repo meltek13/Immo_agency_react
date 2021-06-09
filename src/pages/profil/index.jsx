@@ -103,7 +103,7 @@ const Profil = () => {
               <p>Ville: {annoucement.city}</p>
               <p>Taille: {annoucement.size} m2</p>
               <img
-                src={decodeUrlForImage(annoucement.featured_image.url)}
+                src={annoucement.featured_image.url}
                 alt="image du logement"
               />
               <br />
