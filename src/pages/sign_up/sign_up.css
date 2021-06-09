@@ -1,9 +1,11 @@
 
-.input-log{
+.input-log-signin{
   display: block;
   margin-bottom: 20px;
   padding: 5px;
   width: 300px;
+  border: 1px solid grey;
+  border-radius: 2px;
 }
 
 .Register{
@@ -13,31 +15,22 @@
   flex-direction: column; 
 }
 
-.button-log{
-  width: 315px;
-  height: 30px;
-  cursor: pointer;
-}
-
-
-.h2-signin{
+.h2-signup{
   font-size: 2rem;
   margin-bottom: 50px;
   margin-top: 150px;
 }
-.svg-signin{
+.svg-signup{
   position: relative;
   transform: scale(2.5);
   margin-bottom: 180px;
   top: 50px;
-  left: 100px;
 }
-.btn-signin {
+.btn-signup {
   position: relative;
-
   color: black;
   height: 35px;
-  width: 310px;
+  width: 305px;
   cursor: pointer;
   background-color: white;
   outline: none;
@@ -48,7 +41,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.100);
   transition: all 250ms ease-in-out;
 }
-.btn-signin:hover{
+.btn-signup:hover{
   background-color: black;
   color: white;
 }

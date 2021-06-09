@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import {useDispatch } from "react-redux";
 import { logIn } from "store-redux/index";
 import './sign_up.css';
-import signin_svg from 'assets/img/signin.svg';
+import signup_svg from 'assets/img/signup.svg';
 
 
 const SignUp = () => {
@@ -54,13 +54,13 @@ const SignUp = () => {
   return (
     <>
     <div className="Register">
-    <h2 className="h2-signin">Créer un compte</h2>
-      <img className='svg-signin' src={signin_svg} alt="illustration" />
+    <h2 className="h2-signup">Créer un compte</h2>
+      <img className='svg-signup' src={signup_svg} alt="illustration" />
         <form>
-        <input className="input-log" type="Email" name="Email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input className="input-log" type="Password" name="Password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <input className="input-log" type="Password" name="Password" placeholder="Mot de passe de confirmation"  onChange={(e) => setConfirmPassword(e.target.value)} />
-        <button className="btn-signin" type="submit" onClick={fetchFunction} >S'inscrire</button>
+        <input className="input-log-signin" type="Email" name="Email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
+        <input className="input-log-signin" type="Password" name="Password" placeholder="Mot de passe" value={password} onChange={(e) => setPassword(e.target.value)} />
+        <input className="input-log-signin" type="Password" name="Password" placeholder="Mot de passe de confirmation"  onChange={(e) => setConfirmPassword(e.target.value)} />
+        <button className="btn-signup" type="submit" onClick={fetchFunction} >S'inscrire</button>
       </form>
     </div>
     </>
