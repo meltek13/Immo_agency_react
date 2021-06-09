@@ -26,7 +26,7 @@
   margin-bottom: 180px;
   top: 50px;
 }
-.btn-signup {
+.btn-signin {
   position: relative;
   color: black;
   height: 35px;
@@ -41,7 +41,7 @@
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.100);
   transition: all 250ms ease-in-out;
 }
-.btn-signup:hover{
+.btn-signin:hover{
   background-color: black;
   color: white;
 }

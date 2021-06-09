@@ -1,0 +1,31 @@
+
+.h2-signin{
+  font-size: 2rem;
+  margin-bottom: 50px;
+  margin-top: 150px;
+}
+.svg-signin{
+  position: relative;
+  transform: scale(2.5);
+  margin-bottom: 180px;
+  top: 50px;
+}
+#btn-signin {
+  position: relative;
+  color: red;
+  height: 35px;
+  width: 305px;
+  cursor: pointer;
+  background-color: white;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.100);
+  transition: all 250ms ease-in-out;
+}
+#btn-signin:hover{
+  background-color: black;
+  color: white;
+}
