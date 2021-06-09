@@ -6,7 +6,7 @@ import IntegerStepMin from "components/SlideBarPriceMin"
 import IntegerStepMax from "components/SlideBarPriceMax"
 import {ControlOutlined, DownOutlined} from '@ant-design/icons'
 import { InputNumber, Menu, Dropdown } from 'antd';
-
+import welcome_svg from 'assets/img/welcome.svg'
 
 const Home = () => {
 
@@ -86,8 +86,10 @@ const Home = () => {
 
     return (
         <>
-        <h3 className="titleWhere">Où cherchez-vous ?</h3>
-        <h5 className="tileLocality">LOCALITÉS</h5>
+        <h1 className="h1-welcome">Bienvenue <br /> sur Immo 👋  </h1>
+        <img className="svg-welcome" src={welcome_svg} alt="maisons" />
+        <h2 className="titleWhere">Où cherchez-vous ?</h2>
+        <h4 className="tileLocality">LOCALITÉS</h4>
     <form>
         <input
             onChange={event => setCity(event.target.value)}
