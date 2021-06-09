@@ -8,12 +8,27 @@
 
 .Register{
   display: flex;
-  padding-left: 30%;
-  padding-top: 250px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
 }
 
 .button-log{
   width: 315px;
   height: 30px;
   cursor: pointer;
+}
+
+
+.h2-signin{
+  font-size: 2rem;
+  margin-bottom: 50px;
+  margin-top: 150px;
+}
+.svg-signin{
+  position: relative;
+  transform: scale(2.5);
+  margin-bottom: 180px;
+  top: 50px;
+  left: 100px;
 }
