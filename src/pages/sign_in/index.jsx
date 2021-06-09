@@ -4,6 +4,8 @@ import Cookies from "js-cookie";
 import { useSelector } from "react-redux";
 import {useDispatch } from "react-redux";
 import { logIn } from "store-redux/index";
+import signin_svg from 'assets/img/signin.svg';
+import './sign_in.css';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -52,11 +54,13 @@ const SignIn = () => {
     
     return (
         <div className="Register">
-          
-        <form>
-        <input className="input-log" type="Email" name="Email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <input className="input-log" type="Password" name="Password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        <button className="button-log" type="submit" onClick={fetchFunction} >Se connecter</button>
+          <h2 className="h2-signup">Se connecter</h2>
+          <img className='svg-signup' src={signin_svg} alt="illustration" />
+
+          <form>
+            <input className="input-log-signin" type="Email" name="Email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            <input className="input-log-signin" type="Password" name="Password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <button className="btn-signin" type="submit" onClick={fetchFunction} >Se connecter</button>
       </form>
       
         </div>
