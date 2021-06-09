@@ -141,8 +141,7 @@ const Home = () => {
             </div>
         </form>
     </div>
-
-            {annoucements.map(annoucement => 
+    {annoucements.length > 0 ?(annoucements.map(annoucement => 
                 <div key={annoucement.id} >
                     <div className="container">
                         {annoucement.typeHome === "Maison"?(
@@ -158,8 +157,9 @@ const Home = () => {
                         </div>
                         <Link to={`/showAnnoucement/${annoucement.id}`}><button className="btn">Voir l'annonce</button></Link>
                     </div>
-                </div>
-            )}             
+                </div>  
+            )            ):(<h1>Aucun resultat ...</h1>)} 
+            
         </>
     )
 }
