@@ -39,7 +39,7 @@
 }
 .SearchBar{
   outline: none;
-  border-radius: 10px 0px 0px 10px;
+  border-radius: 10px 0px 0px 0px;
   border: 1px solid lightgray;
   padding-left: 30px;
   padding-right: 8px;
@@ -93,8 +93,10 @@
 
 .FormFilter{
   border: 1px solid lightgray;
+  border-radius: 0px 0px 10px 0px;;
   padding-left: 25px;
   width: 80%;
+  margin-bottom: 30px;
 }
 
 

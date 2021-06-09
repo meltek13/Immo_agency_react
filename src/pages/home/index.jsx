@@ -38,7 +38,7 @@ const Home = () => {
              </div>
           </Menu.Item>
         </Menu>
-      );
+     );
     
      const openFilter = () => {
         const Filter = document.querySelector(".FormFilter form")
@@ -62,25 +62,27 @@ const Home = () => {
             })
     }, [])
     
-    const onSelect = (e) => {
-        e.preventDefault()
-        setAnnoucements([])
-            data.map(annoucement => 
-                annoucement.price > inputValueMin && annoucement.price < inputValueMax && annoucement.size > sizeMin && annoucement.size < sizeMax  && 
-                setAnnoucements(oldArray => [...oldArray, annoucement]))           
-    }
-
-  
-    
     const search = (e) => {
         e.preventDefault()
         setAnnoucements([])
-        data.map(annoucement => annoucement.city === city && setAnnoucements(oldArray => [...oldArray, annoucement]))
-        city === '' && fetch('http://localhost:3000/annoucements')
-        .then((response) => response.json())
-        .then((response) =>  setAnnoucements(response))
+        if (city !== "" & type !==""){
+            data.map(annoucement => 
+                annoucement.price > inputValueMin && annoucement.price < inputValueMax && annoucement.size > sizeMin && annoucement.size < sizeMax  && annoucement.city === city && annoucement.typeHome === type && 
+                setAnnoucements(oldArray => [...oldArray, annoucement]))  
+        }else if (city !== "" & type ===""){
+            data.map(annoucement => 
+                annoucement.price > inputValueMin && annoucement.price < inputValueMax && annoucement.size > sizeMin && annoucement.size < sizeMax  && annoucement.city === city &&
+                setAnnoucements(oldArray => [...oldArray, annoucement]))  
+        }else if (city === "" & type !==""){
+            data.map(annoucement => 
+                annoucement.price > inputValueMin && annoucement.price < inputValueMax && annoucement.size > sizeMin && annoucement.size < sizeMax  && annoucement.typeHome === type && 
+                setAnnoucements(oldArray => [...oldArray, annoucement]))  
+        } else  {
+            data.map(annoucement => 
+                annoucement.price > inputValueMin && annoucement.price < inputValueMax && annoucement.size > sizeMin && annoucement.size < sizeMax  && 
+                setAnnoucements(oldArray => [...oldArray, annoucement]))  
+        }          
     }
-
 
     return (
         <>
@@ -101,45 +103,43 @@ const Home = () => {
     </div> 
 
     <div className="FormFilter">
-      <form className="Invisible"> 
+        <form className="Invisible"> 
 
-        <div className="someOptionsForSearch">  
-            <div className="someOptionInput1">
-              <h5>TYPE DE BIEN :</h5>
-            </div> 
-            <div className="someOptionInput1">
-              <h5>SURFACE MIN (m²)</h5>
-            </div> 
-            <div className="someOptionInput1">
-              <h5>SURFACE MAX (m²)</h5>
-            </div> 
-        </div>
+            <div className="someOptionsForSearch">  
+                <div className="someOptionInput1">
+                     <h5>TYPE DE BIEN :</h5>
+                </div> 
+                <div className="someOptionInput1">
+                     <h5>SURFACE MIN (m²)</h5>
+                </div> 
+                <div className="someOptionInput1">
+                     <h5>SURFACE MAX (m²)</h5>
+                </div> 
+            </div>
     
-        <div className="someOptionsForSearch">  
-            <div className="someOptionInput2">
-               <Dropdown overlay={menu}>
-                 <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
-                    {type === "" ? "Que voulez vous acheter ? " : type} <DownOutlined />
-                 </a>
-               </Dropdown>
-            </div>
+            <div className="someOptionsForSearch">  
+                <div className="someOptionInput2">
+                    <Dropdown overlay={menu}>
+                        <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+                             {type === "" ? "Que voulez vous acheter ? " : type} <DownOutlined />
+                        </a>
+                    </Dropdown>
+                </div>
         
-            <div className="someOptionInput2">
-               <InputNumber min={1} max={1000} defaultValue={1}  onChange={event => setSizeMin(event)} /> 
-            </div>
-            <div className="someOptionInput2">
-               <InputNumber min={1} max={1000} defaultValue={999} onChange={event => setSizeMax(event)} /> 
-            </div>
-        </div> 
+                <div className="someOptionInput2">
+                    <InputNumber min={1} max={1000} defaultValue={1}  onChange={event => setSizeMin(event)} /> 
+                </div>
+                <div className="someOptionInput2">
+                    <InputNumber min={1} max={1000} defaultValue={999} onChange={event => setSizeMax(event)} /> 
+                </div>
+            </div> 
      
-        <div className="slideBar">
-            <h5>BUDGET :</h5>
-            <IntegerStepMin onchange={event => setInputValueMin(event)} value={inputValueMin}/>
-            <IntegerStepMax onchange={event => setInputValueMax(event)} value={inputValueMax}/>
-        </div>
-     
-            <button className="buttonSearch2" onClick={onSelect}>Chercher</button>
-      </form>
+            <div className="slideBar">
+                 <h5>BUDGET :</h5>
+                 <IntegerStepMin onchange={event => setInputValueMin(event)} value={inputValueMin}/>
+                 <IntegerStepMax onchange={event => setInputValueMax(event)} value={inputValueMax}/>
+            </div>
+        </form>
     </div>
 
             {annoucements.map(annoucement => 
