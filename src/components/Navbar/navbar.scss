@@ -1,16 +1,19 @@
 .navbar{
-    display: block;
+    display: flex;
+    flex-direction: column;    
     position: fixed;
     height: 100%;
     width: 130px;
-    left: 0%;
+    left: 0;
     background-color: #3F3D56;
-    padding-top: 20px
+    padding-top: 20px;
+
  }
 
   .content-link{
     padding: 20%;
-    
+   left: 15px;
+   position: relative;
   }
   
   .title-nav {
