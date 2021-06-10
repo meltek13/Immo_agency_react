@@ -14,7 +14,8 @@ const Profil = () => {
   const [annoucements, setAnnoucements] = useState([]);
   const dispatch = useDispatch();
   const history = useHistory();
-
+  
+  // fonction a  utiliser en local pour les images
   const decodeUrlForImage = (imageUrl) => {
     let link = imageUrl;
     let linkStart = link.substring(0, 16);
@@ -26,7 +27,7 @@ const Profil = () => {
   };
 
   const fetchFunction = () => {
-    fetch("https://immo-react.herokuapp.com/members", {
+    fetch("http://localhost:3000/members", {
       method: "get",
       headers: {
         Authorization: Cookies.get("token"),
@@ -45,7 +46,7 @@ const Profil = () => {
   }, []);
 
   const deleteAccount = (e) => {
-    fetch(`https://immo-react.herokuapp.com/members/${id}`, {
+    fetch(`http://localhost:3000/members/${id}`, {
       method: "delete",
       headers: {
         Authorization: Cookies.get("token"),
@@ -62,7 +63,7 @@ const Profil = () => {
   };
 
   useEffect(() => {
-    fetch("https://immo-react.herokuapp.com/annoucements")
+    fetch("http://localhost:3000/annoucements")
       .then((response) => response.json())
       .then((response) => {
         response.map(
@@ -75,7 +76,7 @@ const Profil = () => {
   }, []);
 
   const remove = (id) => {
-    fetch("https://immo-react.herokuapp.com/annoucements/" + id, {
+    fetch("http://localhost:3000/annoucements/" + id, {
       method: "DELETE",
     });
   };
