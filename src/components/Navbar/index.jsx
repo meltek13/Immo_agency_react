@@ -17,7 +17,7 @@ const Navbar = () => {
   const handleClick = (e) => {
     e.preventDefault();
  
-    fetch("http://localhost:3000/users/sign_out", {
+    fetch("https://immo-react-front.herokuapp.com/users/sign_out", {
         method: "delete",
         headers: {
           Authorization: Cookies.get("token"),
@@ -71,7 +71,7 @@ const Navbar = () => {
       <div className="content-link">
       
         <Link className="link" to="/signUp">
-        <h6 className="title-nav">S'inscrire</h6>
+          <h6 className="title-nav">S'inscrire</h6>
           <span className="home-icon"><SolutionOutlined /></span>
         </Link>
       </div>

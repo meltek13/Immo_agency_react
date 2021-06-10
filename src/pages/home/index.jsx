@@ -48,7 +48,7 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:3000/annoucements")
+    fetch("https://immo-react-front.herokuapp.com/annoucements")
       .then((response) => response.json())
       .then((response) => {
         setAnnoucements(response);
@@ -209,7 +209,7 @@ const Home = () => {
             <div className="container">
               {annoucement.featured_image ? (
                 <img
-                  src={decodeUrlForImage(annoucement.featured_image.url)}
+                  src={annoucement.featured_image.url}
                   alt="image du logement"
                 />
               ) : annoucement.typeHome === "Maison" ? (
