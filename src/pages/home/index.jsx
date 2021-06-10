@@ -102,6 +102,7 @@ const Home = () => {
     }
   };
 
+  // fonction a  utiliser en local pour les images 
   const decodeUrlForImage = (imageUrl) => {
     let link = imageUrl;
     let linkStart = link.substring(0, 16);
@@ -115,7 +116,7 @@ const Home = () => {
   return (
     <>
       <h1 className="h1-welcome">
-        Bienvenue <br /> sur Immo 👋{" "}
+        Bienvenue sur Immo 👋{" "}
       </h1>
       <img className="svg-welcome" src={welcome_svg} alt="maisons" />
       <h2 className="titleWhere">Où cherchez-vous ?</h2>

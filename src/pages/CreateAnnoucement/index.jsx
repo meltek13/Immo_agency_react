@@ -4,6 +4,7 @@ import Cookies from "js-cookie";
 import Dropdown from "react-dropdown";
 import ButtonCreate from "../../components/ButtonCreate";
 import ButtonUpdate from "components/ButtonUpdate";
+import { useHistory } from "react-router-dom";
 
 const CreateAnnoucement = () => {
   const [title, setTitle] = useState("");
@@ -15,7 +16,7 @@ const CreateAnnoucement = () => {
   const [size, setSize] = useState("");
   const [type, setType] = useState("Maison");
   const [featuredImage, setFeaturedImage] = useState("");
-
+  const history = useHistory();
   const create = (event) => {
     event.preventDefault();
 
@@ -32,10 +33,11 @@ const CreateAnnoucement = () => {
     formData.append("typeHome", type);
     formData.append("featured_image", featuredImage);
 
-    fetch("https://immo-react.herokuapp.com/annoucements", {
+    fetch("http://localhost:3000/annoucements", {
       method: "POST",
       body: formData,
-    }).catch((error) => console.log(error));
+    }).then((response)=> history.push("/"))
+      .catch((error) => console.log(error));
   };
 
   const options = ["Maison", "Appartement"];
