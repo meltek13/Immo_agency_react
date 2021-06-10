@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import Dropdown from "react-dropdown";
 import ButtonCreate from "../../components/ButtonCreate";
 import ButtonUpdate from "components/ButtonUpdate";
-
+import Addhome from 'assets/img/add_home.svg'
 const CreateAnnoucement = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -48,6 +48,7 @@ const CreateAnnoucement = () => {
 
   return (
     <div className="content-input">
+      <img className="svg-addhome" src={Addhome} alt="illustration" />
       <form>
         <input
           className="form"
@@ -97,8 +98,9 @@ const CreateAnnoucement = () => {
           multiple={false}
           onChange={(event) => setFeaturedImage(event.target.files[0])}
         />
-        <ButtonCreate action={create} name="Creer une annonce" />
       </form>
+      <ButtonCreate action={create} name="Créer l'annonce" />
+
     </div>
   );
 };
