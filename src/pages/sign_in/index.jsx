@@ -60,7 +60,7 @@ const SignIn = () => {
           <form>
             <input className="input-log-signin" type="Email" name="Email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input className="input-log-signin" type="Password" name="Password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <button className="btn-signin" type="submit" onClick={fetchFunction} >Se connecter</button>
+            <button id="btn-signin" type="submit" onClick={fetchFunction} >Se connecter</button>
       </form>
       
         </div>

@@ -6,13 +6,14 @@ import {
 import Cookies from "js-cookie";
 import './index.css';
 import { Link } from 'react-router-dom';
+import { useSelector} from "react-redux";
 
 const ShowAnnoucement = () => {
 
   const [annoucement, setAnnoucement] = useState('');
   const [idUser, setIdUser] = useState(0);
   const [user, setUser] = useState('');
-
+  const loged = useSelector((state) => state.loged);
   let { id } = useParams();
 
   const findUser = () => {
@@ -44,7 +45,8 @@ const ShowAnnoucement = () => {
 
  return (
   <div className="annoucement-profil">
-    <p>de {user.email}</p>
+{ loged ? (<p>Contact :{user.email}</p> ):(<p>Contact : Connectez-vous pour voir l'email du propriétaire </p> ) }
+    
     <p>Titre: {annoucement.title}</p>
     <p>Description: {annoucement.description}</p>
     <p>Prix: {annoucement.price}€</p>
