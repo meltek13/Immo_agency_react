@@ -5,6 +5,7 @@ import Dropdown from "react-dropdown";
 import ButtonCreate from "../../components/ButtonCreate";
 import ButtonUpdate from "components/ButtonUpdate";
 import { useHistory } from "react-router-dom";
+import Addhome from 'assets/img/add_home.svg'
 
 const CreateAnnoucement = () => {
   const [title, setTitle] = useState("");
@@ -50,6 +51,8 @@ const CreateAnnoucement = () => {
 
   return (
     <div className="content-input">
+      <h2 className="h2-addhome">Se connecter</h2>
+      <img className="svg-addhome" src={Addhome} alt="illustration" />
       <form>
         <input
           className="form"
@@ -99,8 +102,9 @@ const CreateAnnoucement = () => {
           multiple={false}
           onChange={(event) => setFeaturedImage(event.target.files[0])}
         />
-        <ButtonCreate action={create} name="Creer une annonce" />
       </form>
+      <ButtonCreate action={create} name="Créer l'annonce" />
+
     </div>
   );
 };

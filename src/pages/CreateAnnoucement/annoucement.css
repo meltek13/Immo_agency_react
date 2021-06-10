@@ -1,13 +1,18 @@
 .form{
   display: block;
-  margin-top: 10px;
-  width: 400px;
-  height: 30px;
+  margin-bottom: 20px;
+  padding: 5px;
+  width: 300px;
+  border: 1px solid grey;
+  border-radius: 2px;
+
 }
 
 .content-input{
- padding-top: 10%;
- padding-left: 30%;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
 }
 
 .dropdown-type-create{
@@ -18,4 +23,18 @@
   width: 100px;
   text-align: center;
   margin-bottom: 10px;
+}
+
+.svg-addhome{
+  position: relative;
+  transform: scale(2.5);
+  margin-bottom: 200px;
+  top: 100px;
+}
+
+.h2-addhome{
+  position: relative;
+  font-size: 2rem;
+  top: 50px;
+  margin-top: 0px;
 }

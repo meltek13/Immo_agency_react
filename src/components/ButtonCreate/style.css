@@ -1,7 +1,21 @@
 .button-create{
-  background-color: green;
-  padding: 5px;
-  border-color: green;
-  border-radius: 5px;
+  position: relative;
+  color: red;
+  height: 40px;
+  width: 305px;
   cursor: pointer;
+  background-color: white;
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  
+  margin-right: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.100);
+  transition: all 250ms ease-in-out;
+  margin-top: 20px;
+}
+.button-create:hover{
+  background-color: green;
+  color: white;
+  border: none;
 }
