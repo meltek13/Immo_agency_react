@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import ButtonDelete from "../../components/ButtonDelete";
 import ButtonUpdate from "../../components/ButtonUpdate";
 import "./index.scss";
-
+import My_location from 'assets/img/my_locations.svg'
 const Profil = () => {
   const [email, setEmail] = useState("");
   const [id, setId] = useState("");
@@ -84,8 +84,9 @@ const Profil = () => {
   return (
     <>
       <div id="container-profil">
+        <img className='svg_mylocations' src={My_location} alt="illsutration" />
         <div id="box-infos">
-          <p className="email">{email}</p>
+          <h2 className="email"> Bonjour, {email}</h2>
           <ButtonDelete
             action={deleteAccount}
             className="delete-account"

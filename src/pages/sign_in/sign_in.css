@@ -26,6 +26,7 @@
   margin-bottom: 100px;
 }
 #btn-signin:hover{
-  background-color: black;
+  background-color: #68C0FD
+  ;
   color: white;
 }

@@ -1,6 +1,5 @@
 .button-create{
   position: relative;
-  color: red;
   height: 40px;
   width: 305px;
   cursor: pointer;
@@ -15,7 +14,8 @@
   margin-bottom: 100px;
 }
 .button-create:hover{
-  background-color: green;
+  background-color: #68C0FD
+  ;
   color: white;
   border: none;
 }
