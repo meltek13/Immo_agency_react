@@ -17,7 +17,7 @@ const Navbar = () => {
   const handleClick = (e) => {
     e.preventDefault();
  
-    fetch("https://immo-react-front.herokuapp.com/users/sign_out", {
+    fetch("https://immo-react.herokuapp.com/users/sign_out", {
         method: "delete",
         headers: {
           Authorization: Cookies.get("token"),

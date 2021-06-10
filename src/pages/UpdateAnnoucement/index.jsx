@@ -17,7 +17,7 @@ const UpdateAnnoucment = () => {
   const [type, setType] = useState('Maison')
 
   const update = () => {
-    fetch("https://immo-react-front.herokuapp.com/annoucements/" + id, {
+    fetch("https://immo-react.herokuapp.com/annoucements/" + id, {
       method: "PUT",
       headers: {
         'Accept': 'application/json',

@@ -48,7 +48,7 @@ const Home = () => {
   ];
 
   useEffect(() => {
-    fetch("https://immo-react-front.herokuapp.com/annoucements")
+    fetch("https://immo-react.herokuapp.com/annoucements")
       .then((response) => response.json())
       .then((response) => {
         setAnnoucements(response);
