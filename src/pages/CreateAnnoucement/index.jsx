@@ -51,7 +51,7 @@ const CreateAnnoucement = () => {
 
   return (
     <div className="content-input">
-      <h2 className="h2-addhome">Se connecter</h2>
+      <h2 className="h2-addhome">Ajouter un bien</h2>
       <img className="svg-addhome" src={Addhome} alt="illustration" />
       <form>
         <input
