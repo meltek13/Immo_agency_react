@@ -16,14 +16,14 @@ const ShowAnnoucement = () => {
   let { id } = useParams();
 
   const findUser = () => {
-    fetch("https://immo-react-front.herokuapp.com/annoucements/" + id)
+    fetch("https://immo-react.herokuapp.com/annoucements/" + id)
     .then((response) => response.json())
     .then((response) => {setAnnoucement(response);
     setIdUser(response.user_id)})
   }
 
   const allUser = () => {
-    fetch("https://immo-react-front.herokuapp.com/members", {
+    fetch("https://immo-react.herokuapp.com/members", {
       method: "get",
       headers: {
         Authorization: Cookies.get("token"),

@@ -34,7 +34,7 @@ const CreateAnnoucement = () => {
     formData.append("typeHome", type);
     formData.append("featured_image", featuredImage);
 
-    fetch("https://immo-react-front.herokuapp.com/annoucements", {
+    fetch("https://immo-react.herokuapp.com/annoucements", {
       method: "POST",
       body: formData,
     }).then((response)=> history.push("/"))

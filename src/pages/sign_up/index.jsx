@@ -27,7 +27,7 @@ const SignUp = () => {
       password,
     };
 
-    fetch("https://immo-react-front.herokuapp.com/users", {
+    fetch("https://immo-react.herokuapp.com/users", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

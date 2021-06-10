@@ -27,7 +27,7 @@ const Profil = () => {
   };
 
   const fetchFunction = () => {
-    fetch("https://immo-react-front.herokuapp.com/members", {
+    fetch("https://immo-react.herokuapp.com/members", {
       method: "get",
       headers: {
         Authorization: Cookies.get("token"),
@@ -46,7 +46,7 @@ const Profil = () => {
   }, []);
 
   const deleteAccount = (e) => {
-    fetch(`https://immo-react-front.herokuapp.com/members/${id}`, {
+    fetch(`https://immo-react.herokuapp.com/members/${id}`, {
       method: "delete",
       headers: {
         Authorization: Cookies.get("token"),
@@ -63,7 +63,7 @@ const Profil = () => {
   };
 
   useEffect(() => {
-    fetch("https://immo-react-front.herokuapp.com/annoucements")
+    fetch("https://immo-react.herokuapp.com/annoucements")
       .then((response) => response.json())
       .then((response) => {
         response.map(
@@ -76,7 +76,7 @@ const Profil = () => {
   }, []);
 
   const remove = (id) => {
-    fetch("https://immo-react-front.herokuapp.com/annoucements/" + id, {
+    fetch("https://immo-react.herokuapp.com/annoucements/" + id, {
       method: "DELETE",
     });
   };
